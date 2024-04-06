@@ -1,0 +1,847 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+    <!-- Hero Section Start -->
+    <div class="hero parallaxie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8">
+                    <!-- Section Title start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Health Insurance</h3>
+                        <h1 class="text-anime">You are Ready to Get Your Insurance</h1>
+                    </div>
+                    <!-- Section Title end -->
+
+                    <!-- Hero Body start -->
+                    <div class="hero-body">
+                        <p class="wow fadeInUp" data-wow-delay="0.50s">Get peace of mind with our comprehensive insurance coverage tailored to your needs. From home and auto to life and health, we've got you covered. Explore our range of policies and find the perfect fit for your family's security.</p>
+                        <a href="#" class="btn-default hero-btn wow fadeInUp" data-wow-delay="0.75s">Get Started</a>
+                    </div>
+                    <!-- Hero Body end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- Home Inforamtion Section Starts -->
+    <div class="home-info-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Information Box Item start -->
+                    <div class="info-box wow fadeInUp" data-wow-delay="0.50s">
+                        <div class="box-icon">
+                            <img src="{% static 'web/images/icon-peace-of-mind.svg' %}" alt="">
+                        </div>
+                        <div class="box-body">
+                            <h3>Peace of Mind</h3>  
+                            <p>Phasellus fermentum congue arcu.</p>
+                        </div>
+                    </div>
+                    <!-- Information Box Item end -->
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Information Box Item start -->
+                    <div class="info-box wow fadeInUp" data-wow-delay="0.75s">
+                        <div class="box-icon">
+                            <img src="{% static 'web/images/icon-tailored-cover.svg' %}" alt="">
+                        </div>
+                        <div class="box-body">
+                            <h3>Tailored Cover</h3>
+                            <p>Phasellus fermentum congue arcu.</p>
+                        </div>
+                    </div>
+                    <!-- Information Box Item end -->
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Information Box Item start -->
+                    <div class="info-box wow fadeInUp" data-wow-delay="1.0s">
+                        <div class="box-icon">
+                            <img src="{% static 'web/images/icon-24-7-support.svg' %}" alt="">
+                        </div>
+                        <div class="box-body">
+                            <h3>24/7 Support</h3>
+                            <p>Phasellus fermentum congue arcu.</p>
+                        </div>
+                    </div>
+                    <!-- Information Box Item end -->
+                </div>                
+            </div>
+        </div>
+    </div>
+    <!-- Home Inforamtion Section End -->
+
+    <!-- About Section Start -->
+    <div class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 order-lg-1 order-2">
+                    <!-- About video start -->
+					<div class="about-video wow fadeInLeft" data-wow-delay="0.25s">
+                        <figure class="image-anime">
+                            <img src="{% static 'web/images/video-placeholder.jpg' %}" alt="">
+                        </figure>
+					</div>
+					<!-- About video end -->
+                </div>
+
+                <div class="col-lg-6 col-md-12 order-lg-2 order-1">
+                    <div class="about-content">
+                        <!-- Section Title start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp" data-wow-delay="0.25s">About Zorvixa</h3>
+                            <h2 class="text-anime">Reliable Insurance For Any Purpose</h2>
+                        </div>
+                        <!-- Section Title end -->
+
+                        <div class="about-body">
+                            <p class="wow fadeInUp" data-wow-delay="0.50s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        </div>  
+
+                        <!-- About Icon Box start -->
+                        <div class="about-icon-box">
+                            <div class="icon-box wow fadeInUp" data-wow-delay="0.75s">
+                                <img src="{% static 'web/images/icon-secure-services.svg' %}" alt="">
+                                <h3>100 Secure Services</h3>
+                            </div>
+
+                            <div class="icon-box wow fadeInUp" data-wow-delay="1.0s">
+                                <img src="{% static 'web/images/icon-money-back.svg' %}" alt="">
+                                <h3>Anytime Money Back</h3>
+                            </div>                            
+                        </div>
+                        <!-- About Icon Box end -->
+
+                        <div class="about-btn">
+                            <a href="{% url 'web:about' %}" class="btn-default wow fadeInUp" data-wow-delay="1.25s">read More</a>
+                            <div class="about-contact-btn wow fadeInUp" data-wow-delay="1.50s">
+                                <img src="{% static 'web/images/home-contact-bg.png" alt="">
+                                <a href="#" class="contact-btn"><i class="fa-solid fa-phone"></i><strong>Contact Us:</strong> +0123 456 789</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Section End -->
+
+    <!-- Our Services Start -->
+    <div class="our-service">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Title start -->
+                    <div class="section-title text-center">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Our Services</h3>
+                        <h2 class="text-anime">What we are Offering</h2>
+                    </div>
+                    <!-- Section Title end -->
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Services Step Box Start -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="step-box wow fadeInUp" data-wow-delay="0.50s">
+                        <!-- Step Box Img start -->
+                        <div class="step-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/services-1.jpg' %}" alt="">
+                            </figure>
+                        </div>
+                        <!-- Step Box Img end -->
+
+                        <!-- Step Box Body start -->
+                        <div class="step-body">
+                            <!-- Step Icon start -->
+                            <div class="step-icon">
+                                <img src="{% static 'web/images/icon-services-1.svg' %}" alt="">
+                            </div>
+                            <!-- Step Icon end -->
+
+                            <h3>Health Insurance</h3>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                            <a href="services-single.html" class="btn-read-more">Read More</a>
+                        </div>
+                        <!-- Step Box Body end -->
+                    </div>
+                </div>
+                <!-- Services Step Box End -->
+
+                <!-- Services Step Box Start -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="step-box wow fadeInUp" data-wow-delay="0.75s">
+                        <!-- Step Box Img start -->
+                        <div class="step-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/services-2.jpg' %}" alt="">
+                            </figure>
+                        </div>
+                        <!-- Step Box Img end -->
+
+                        <!-- Step Box Body start -->
+                        <div class="step-body">
+                            <!-- Step Icon start -->
+                            <div class="step-icon">
+                                <img src="{% static 'web/images/icon-services-2.svg' %}" alt="">
+                            </div>
+                            <!-- Step Icon end -->
+
+                            <h3>Car Insurance</h3>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                            <a href="services-single.html" class="btn-read-more">Read More</a>
+                        </div>
+                        <!-- Step Box Body end -->
+                    </div>
+                </div>
+                <!-- Services Step Box End -->
+
+                <!-- Services Step Box Start -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="step-box wow fadeInUp" data-wow-delay="1.0s">
+                        <!-- Step Box Img start -->
+                        <div class="step-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/services-3.jpg' %}" alt="">
+                            </figure>
+                        </div>
+                        <!-- Step Box Img end -->
+
+                        <!-- Step Box Body start -->
+                        <div class="step-body">
+                            <!-- Step Icon start -->
+                            <div class="step-icon">
+                                <img src="{% static 'web/images/icon-services-3.svg' %}" alt="">
+                            </div>
+                            <!-- Step Icon end -->
+
+                            <h3>Home Insurance</h3>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                            <a href="services-single.html" class="btn-read-more">Read More</a>
+                        </div>
+                        <!-- Step Box Body end -->
+                    </div>
+                </div>
+                <!-- Services Step Box End -->
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="service-btn text-center wow fadeInUp" data-wow-delay="0.50s">
+                        <a href="{% url 'web:about' %}" class="btn-default">View All Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Services End -->
+
+    <!-- Get Consultations Start -->
+    <div class="get-consulations">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <!-- Consulations Image start -->
+                    <div class="consulations-img text-lg-start text-center wow fadeInUp" data-wow-delay="0.50s">
+                        <img src="{% static 'web/images/get-consulations.png" alt="">
+                    </div>
+                    <!-- Consulations Image end -->
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="consulations-content">
+                        <!-- Section Title start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp" data-wow-delay="0.25s">Get Consultations</h3>
+                            <h2 class="text-anime">5 Years of Excellence in The Insurance Industry.</h2>
+                        </div>
+                        <!-- Section Title end -->
+
+                        <!-- Consulations Body start -->
+                        <div class="consulations-body">
+                            <p class="wow fadeInUp" data-wow-delay="0.50s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                        </div>
+                        <!-- Consulations Body end -->
+
+                        <!-- List Icon start -->
+                        <div class="list-icon wow fadeInUp" data-wow-delay="0.75s">
+                            <ul>
+                                <li><span>01.</span> can save your money.</li>
+                                <li><span>02.</span> Our life insurance is flexible</li>
+                            </ul>
+                        </div>
+                        <!-- List Icon end -->
+
+                        <a href="contact-us.html" class="btn-default wow fadeInUp" data-wow-delay="1.0s">Contact Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Get Consultations Section End -->
+
+    <!-- Counter Section Start -->
+    <div class="counter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- Counter Box start -->
+                    <div class="counter-box wow fadeInUp" data-wow-delay="0.50s">
+                        <div class="counter-img">
+                            <img src="{% static 'web/images/icon-happy-customers.svg' %}" alt="">
+                        </div>
+                        <div class="counter-body">
+                            <h3><span class="counter">1150</span>+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>  
+                    <!-- Counter Box end -->
+                </div>
+                
+                <div class="col-lg-3 col-6">
+                    <!-- Counter Box start -->
+                    <div class="counter-box wow fadeInUp" data-wow-delay="0.75s">
+                        <div class="counter-img">
+                            <img src="{% static 'web/images/icon-insurance-careers.svg' %}" alt="">
+                        </div>
+                        <div class="counter-body">
+                            <h3><span class="counter">150</span>+</h3>
+                            <p>Insurance Careers</p>
+                        </div>
+                    </div>  
+                    <!-- Counter Box end -->
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- Counter Box start -->
+                    <div class="counter-box wow fadeInUp" data-wow-delay="1.0s">
+                        <div class="counter-img">
+                            <img src="{% static 'web/images/icon-awards-won.svg' %}" alt="">
+                        </div>
+                        <div class="counter-body">
+                            <h3><span class="counter">15</span>+</h3>
+                            <p>Awards Won</p>
+                        </div>
+                    </div>  
+                    <!-- Counter Box end -->
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- Counter Box start -->
+                    <div class="counter-box wow fadeInUp" data-wow-delay="1.25s">
+                        <div class="counter-img">
+                            <img src="{% static 'web/images/icon-claims-settled.svg' %}" alt="">
+                        </div>
+                        <div class="counter-body">
+                            <h3><span class="counter">2000</span>+</h3>
+                            <p>Claims Settled</p>
+                        </div>
+                    </div>  
+                    <!-- Counter Box end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Counter Section End -->
+
+    <!-- Our Team Section Start -->
+    <div class="our-team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Section Title start -->
+                    <div class="section-title text-center">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Our Team</h3>
+                        <h2 class="text-anime">Meet Our Experienced Team</h2>
+                    </div>
+                    <!-- Section Title end -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-card text-center wow fadeInUp" data-wow-delay="0.50s">
+                        <!-- Team Img start -->
+                        <div class="team-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/team-1.jpg' %}" alt="">
+                            </figure>
+
+                            <div class="our-team-social-icon">
+                                <ul>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                </ul>                               
+                            </div>
+                        </div>
+                        <!-- Team Img end -->
+
+                        <!-- Team Body start -->
+                        <div class="team-content">
+                            <h3>Michael Johnson</h3>
+                            <p>founder</p>
+                            <div class="divider-separator"></div>
+                        </div>
+                        <!-- Team Body end -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-card text-center wow fadeInUp" data-wow-delay="0.75s">
+                        <!-- Team Img start -->
+                        <div class="team-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/team-2.jpg' %}" alt="">
+                            </figure>
+
+                            <div class="our-team-social-icon">
+                                <ul>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Team Img end -->
+
+                        <!-- Team Body start -->
+                        <div class="team-content">
+                            <h3>Jessica Anderson</h3>
+                            <p>co-founder & CEO</p>
+                            <div class="divider-separator"></div>
+                        </div>
+                        <!-- Team Body end -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-card text-center wow fadeInUp" data-wow-delay="1.0s">
+                        <!-- Team Img start -->
+                        <div class="team-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/team-3.jpg' %}" alt="">
+                            </figure>
+
+                            <div class="our-team-social-icon">
+                                <ul>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Team Img end -->
+
+                        <!-- Team Body start -->
+                        <div class="team-content">
+                            <h3>Brian Wilson</h3>
+                            <p>Claims Representative</p>
+                            <div class="divider-separator"></div>
+                        </div>
+                        <!-- Team Body end -->
+                    </div>
+                    <!-- Team Member Item End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Team Section End -->
+
+    <!-- Why Choose Us Section Start -->
+    <div class="why-choose-us parallaxie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12">
+                    <!-- Why Choose Image start -->
+                    <div class="why-choose-img">
+                        <figure  class="reveal image-anime">
+                            <img src="{% static 'web/images/why-choose-us-img.jpg' %}" alt="">
+                        </figure>
+                    </div>
+                    <!-- Why Choose Image end -->
+                </div>
+
+                <div class="col-lg-7 col-12">
+                    <!-- Section Title start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Why Choose us</h3>
+                        <h2 class="text-anime">Why you should choose Zorvixa ?</h2>
+                    </div>
+                    <!-- Section Title end -->
+
+                    <!-- Why Choose Body start -->
+                    <div class="why-choose-body">
+                        <p class="wow fadeInUp" data-wow-delay="0.50s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                        
+                        <ul class="why-choose-list wow fadeInUp" data-wow-delay="0.75s">
+                            <li>100% Safe Money</li>
+                            <li>Save your Money</li>
+                            <li>Fast Process</li>
+                            <li>Easy Process System</li>
+                            <li>Anytime Money Back</li>
+                            <li>Digital Insurance Policy</li>
+                        </ul>
+
+                        <!-- Support Team Section start -->
+                        <div class="support-team-section wow fadeInUp" data-wow-delay="1.0s">
+                            <!-- Video Section start -->
+                            <div class="video-section">
+                                <div class="video-section-img">
+                                    <figure class="image-anime">
+                                        <img src="{% static 'web/images/why-choose-us-video-img.jpg' %}" alt="">
+                                    </figure>   
+                                </div>
+                                <div class="video-section-play-btn">
+                                    <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video"><i class="fa-regular fa-circle-play"></i></a>
+                                </div>
+                            </div>
+                            <!-- Video Section end -->
+
+                            <!-- Support Team Body start -->
+                            <div class="support-team-body">
+                                <img src="{% static 'web/images/icon-support-team.svg' %}" alt="">
+                                <h3>24/7 Support Team</h3>
+
+                                <ul class="support-team-contact">
+                                    <li><a href="#" class="contact-btn">+0123 456 789</a></li>
+                                    <li><a href="#" class="support-mail-btn">info@domain.com</a></li>
+                                </ul>
+                            </div>
+                            <!-- Support Team Body end -->
+                        </div>
+                        <!-- Support Team Section end -->
+                    </div>
+                </div>
+                <!-- Why Choose Body end -->
+            </div>
+        </div>
+    </div>
+    <!-- Why Choose Us Section End -->
+
+    <!-- Testimonials Start -->
+    <div class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Section Title start -->
+                    <div class="section-title text-center">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Testimonials</h3>
+                        <h2 class="text-anime">Why Client trust Us</h2>
+                    </div>
+                    <!-- Section Title end -->
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="testimonial-slider-wrapper wow fadeInUp" data-wow-delay="0.50s">
+                        <!-- Testimonial Carousel start -->
+                        <div class="swiper testimonial-slider">
+                            <div class="swiper-wrapper">
+                                <!-- Testimonial Slide start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-header">
+                                            <figure class="image-anime">
+                                                <img src="{% static 'web/images/author-1.jpg' %}" alt="">
+                                            </figure>   
+                                            <h3>Alison Miller</h3>
+                                        </div>
+
+                                        <div class="testimonial-body">
+                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
+                                        </div>
+
+                                        <div class="testimonial-footer">
+                                            <div class="rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide end -->
+
+                                <!-- Testimonial Slide start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-header">
+                                            <figure class="image-anime">
+                                                <img src="{% static 'web/images/author-2.jpg' %}" alt="">
+                                            </figure>
+                                            <h3>Michelle Johnson</h3>
+                                        </div>
+
+                                        <div class="testimonial-body">
+                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
+                                        </div>
+
+                                        <div class="testimonial-footer">
+                                            <div class="rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide end -->
+
+                                <!-- Testimonial Slide start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-header">
+                                            <figure class="image-anime">
+                                                <img src="{% static 'web/images/author-3.jpg' %}" alt="">
+                                            </figure>
+                                            <h3>Noah Davis</h3>
+                                        </div>
+
+                                        <div class="testimonial-body">
+                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
+                                        </div>
+
+                                        <div class="testimonial-footer">
+                                            <div class="rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide end -->
+
+                                <!-- Testimonial Slide start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-header">
+                                            <figure class="image-anime">
+                                                <img src="{% static 'web/images/author-4.jpg' %}" alt="">
+                                            </figure>
+                                            <h3>Mason Smith</h3>
+                                        </div>
+
+                                        <div class="testimonial-body">
+                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
+                                        </div>
+
+                                        <div class="testimonial-footer">
+                                            <div class="rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide end -->
+
+                                <!-- Testimonial Slide start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="testimonial-header">
+                                            <figure class="image-anime">
+                                                <img src="{% static 'web/images/author-5.jpg' %}" alt="">
+                                            </figure>
+                                            <h3>Lily Tatiana</h3>
+                                        </div>
+
+                                        <div class="testimonial-body">
+                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
+                                        </div>
+
+                                        <div class="testimonial-footer">
+                                            <div class="rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide end -->
+                            </div>
+
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Testimonial Carousel end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonials End -->
+
+    <!-- Our Articles Start -->
+    <div class="our-articles">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title text-center">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Blog & News</h3>
+                        <h2 class="text-anime">Explore Our Newest Articles</h2>
+                    </div>
+                    <!-- Section Title End -->                    
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Post item Start -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="post-item wow fadeInUp" data-wow-delay="0.50s">
+                        <!-- Post Header start -->
+                        <div class="post-header">
+                            <!-- Feature Img start -->
+                            <div class="feature-img">
+                                <a href="blog-single.html">
+                                    <figure class="image-anime">
+                                        <img src="{% static 'web/images/post-1.jpg' %}" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <!-- Feature Img end -->
+
+                            <!-- Post Meta start -->
+                            <div class="post-meta">
+                                <ul>
+                                    <li>Business Insurance</li>
+                                </ul>
+                            </div>
+                            <!-- Post Meta end -->
+                        </div>
+                        <!-- Post Feature Img end -->
+
+                        <!-- Post Content start -->
+                        <div class="post-content">
+                            <div class="post-header">   
+                                <h2><a href="blog-single.html">Understanding Your Insurance Coverage</a></h2>
+
+                                <p>In today's complex world, understanding your insurance coverage is more important than ever.</p>
+
+                                <a href="blog-single.html" class="btn-read-more">Read more</a>
+                            </div>
+                        </div>
+                        <!-- Post Content end -->
+                    </div>
+                </div>
+                <!-- Post item End -->
+
+                <!-- Post item Start -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="post-item wow fadeInUp" data-wow-delay="0.75s">
+                        <!-- Post Header start -->
+                        <div class="post-header">
+                            <!-- Feature Img start -->
+                            <div class="feature-img">
+                                <a href="blog-single.html">
+                                    <figure class="image-anime">
+                                        <img src="{% static 'web/images/post-2.jpg' %}" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <!-- Feature Img end -->
+
+                            <!-- Post Meta start -->
+                            <div class="post-meta">
+                                <ul>
+                                    <li>Home Insurance</li>
+                                </ul>
+                            </div>
+                            <!-- Post Meta end -->
+                        </div>
+                        <!-- Post Feature Img end -->
+
+                        <!-- Post Content start -->
+                        <div class="post-content">
+                            <div class="post-header">   
+                                <h2><a href="blog-single.html">Tips for Choosing the Right Insurance Policy</a></h2>
+
+                                <p>In today's complex world, understanding your insurance coverage is more important than ever.</p>
+
+                                <a href="blog-single.html" class="btn-read-more">Read more</a>
+                            </div>
+                        </div>
+                        <!-- Post Content end -->
+                    </div>
+                </div>
+                <!-- Post item End -->
+
+                <!-- Post item Start -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="post-item wow fadeInUp" data-wow-delay="1.0s">
+                        <!-- Post Header start -->
+                        <div class="post-header">
+                            <!-- Feature Img start -->
+                            <div class="feature-img">
+                                <a href="blog-single.html">
+                                    <figure class="image-anime">
+                                        <img src="{% static 'web/images/post-3.jpg' %}" alt="">
+                                    </figure>
+                                </a>
+                            </div>
+                            <!-- Feature Img end -->
+
+                            <!-- Post Meta start -->
+                            <div class="post-meta">
+                                <ul>
+                                    <li>Car Insurance</li>
+                                </ul>
+                            </div>
+                            <!-- Post Meta end -->
+                        </div>
+                        <!-- Post Feature Img end -->
+
+                        <!-- Post Content start -->
+                        <div class="post-content">
+                            <div class="post-header">   
+                                <h2><a href="blog-single.html">How to Safeguard Your Financial Well-being</a></h2>
+
+                                <p>In today's complex world, understanding your insurance coverage is more important than ever.</p>
+
+                                <a href="blog-single.html" class="btn-read-more">Read more</a>
+                            </div>
+                        </div>
+                        <!-- Post Content end -->
+                    </div>
+                </div>
+                <!-- Post item End -->
+            </div>
+        </div>
+    </div>
+    <!-- Our Articles End -->
+
+    <!-- Footer Start -->
+   
+
+  {% endblock %}
