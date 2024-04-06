@@ -1,9 +1,9 @@
-from .models import CourseCategory
+from .models import Service
 
 def main_context(request):
-    course_categories = CourseCategory.objects.all()
+    service = Service.objects.all()
 
     context = {
-        "header_course": course_categories,
+        "services": service,
     }
     return context

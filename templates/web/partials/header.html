@@ -7,7 +7,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="{% static 'web/images/loader.svg" alt=""></div>
+			<div id="loading-icon"><img src="{% static 'web/images/loader.svg' %}" alt=""></div>
 		</div>
 	</div>
 	<!-- Preloader End -->
@@ -56,16 +56,16 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="{% url 'web:index' %}">
-						<img src="{% static 'web/images/logo.png' %}" alt="Logo">
+						<img src="{% static 'web/images/cropped-IHPCA-LOGO.png' %}" alt="Logo">
 					</a>
 					<!-- Logo End -->
 	
 					<!-- Main Menu start -->
 					<div class="collapse navbar-collapse main-menu">
 						<ul class="navbar-nav mr-auto" id="menu">
-							<li class="nav-item first-menu"><a class="nav-link" href="index-2.html">Home</a></li>
+							<li class="nav-item first-menu"><a class="nav-link" href="/">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'web:about' %}">About us</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'web:services' %}">Services</a></li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'web:service' %}">Services</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'web:blog' %}">Blog</a></li>
                           
 							<li class="nav-item highlighted-menu"><a class="nav-link" href="{% url 'web:contact' %}">Contact Us</a></li>

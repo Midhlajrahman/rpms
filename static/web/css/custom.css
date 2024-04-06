@@ -37,9 +37,9 @@
 
 :root{
 	--primary-color		: #FFF;
-	--secondary-color	: #0E8FFC;
+	--secondary-color	: #5548B0;
 	--text-color		: #6B7078;
-	--accent-color		: #018AFE;
+	--accent-color		: #5548B0;
 	--heading-color		: #010101;
 	--error-color		: #FF0000;
 	--primary-font		: 'Sintony', sans-serif;
@@ -1085,7 +1085,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 	text-align: center;
 	width: 100px;
 	height: 100px;
-	background-color: var(--accent-color);
+	/* background-color: var(--accent-color); */
 	border-radius: 50%;
 	margin-bottom: 20px;
 }
@@ -1299,6 +1299,8 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 .team-member-card .team-img figure img{
 	width: 100%;
 	transition: var(--transition);
+	height: 200px;
+    object-fit: scale-down;
 }
 
 .team-img .our-team-social-icon{
@@ -1360,7 +1362,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 }
 
 .team-content h3{
-	font-size: 22px;
+	font-size: 14px;
 	margin-bottom: 10px;
 }
 
@@ -4372,4 +4374,7 @@ li.releted-post .feature-title p{
     .error-body p{
         font-size: 16px;
     }
+}
+.navbar-brand img{
+	height: 25px;
 }

@@ -2,8 +2,6 @@
 {% load static %}
 {% block content %}
 
-
-
     <!-- Hero Section Start -->
     <div class="hero parallaxie">
         <div class="container">
@@ -12,14 +10,14 @@
                     <!-- Section Title start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp" data-wow-delay="0.25s">Health Insurance</h3>
-                        <h1 class="text-anime">You are Ready to Get Your Insurance</h1>
+                        <h1 class="text-anime">Reduce The Risk of Accounting Limitlessly!</h1>
                     </div>
                     <!-- Section Title end -->
 
                     <!-- Hero Body start -->
                     <div class="hero-body">
-                        <p class="wow fadeInUp" data-wow-delay="0.50s">Get peace of mind with our comprehensive insurance coverage tailored to your needs. From home and auto to life and health, we've got you covered. Explore our range of policies and find the perfect fit for your family's security.</p>
-                        <a href="#" class="btn-default hero-btn wow fadeInUp" data-wow-delay="0.75s">Get Started</a>
+                        <p class="wow fadeInUp" data-wow-delay="0.50s">You Just Focus On Your Business And We Do Your Financial Assistance As Background! </p>
+                        <a href="{% url 'web:contact' %}" class="btn-default hero-btn wow fadeInUp" data-wow-delay="0.75s">Enquiry Now</a>
                     </div>
                     <!-- Hero Body end -->
                 </div>
@@ -96,35 +94,22 @@
                     <div class="about-content">
                         <!-- Section Title start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp" data-wow-delay="0.25s">About Zorvixa</h3>
-                            <h2 class="text-anime">Reliable Insurance For Any Purpose</h2>
+                            <h3 class="wow fadeInUp" data-wow-delay="0.25s">IHP CHARTERED ACCOUNTANTS</h3>
+                            <h2 class="text-anime">Audit, Tax, Accounting & Business Advisory Firm In Doha - Qatar</h2>
                         </div>
                         <!-- Section Title end -->
 
                         <div class="about-body">
-                            <p class="wow fadeInUp" data-wow-delay="0.50s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <p class="wow fadeInUp" data-wow-delay="0.50s">ISLAM HENDAWY MOHAMED AND PARTNERS CHARTERED ACCOUNTANT–
+
+                                (IHP) is a professional team with regional experiences
+                                in the Middle East and GCC markets to provide highly professional services in Assurance, Audit, Accounting, Tax, Business Consulting, Forensic Accounting, Fundi-ng Solutions, Liquidation and Arbitration Consultancy Business Legal, Litigation Consultancy.
+                                We are the Best Chartered Accountant Firms in Qatar.</p>
                         </div>  
-
-                        <!-- About Icon Box start -->
-                        <div class="about-icon-box">
-                            <div class="icon-box wow fadeInUp" data-wow-delay="0.75s">
-                                <img src="{% static 'web/images/icon-secure-services.svg' %}" alt="">
-                                <h3>100 Secure Services</h3>
-                            </div>
-
-                            <div class="icon-box wow fadeInUp" data-wow-delay="1.0s">
-                                <img src="{% static 'web/images/icon-money-back.svg' %}" alt="">
-                                <h3>Anytime Money Back</h3>
-                            </div>                            
-                        </div>
-                        <!-- About Icon Box end -->
 
                         <div class="about-btn">
                             <a href="{% url 'web:about' %}" class="btn-default wow fadeInUp" data-wow-delay="1.25s">read More</a>
-                            <div class="about-contact-btn wow fadeInUp" data-wow-delay="1.50s">
-                                <img src="{% static 'web/images/home-contact-bg.png" alt="">
-                                <a href="#" class="contact-btn"><i class="fa-solid fa-phone"></i><strong>Contact Us:</strong> +0123 456 789</a>
-                            </div>
+                         
                         </div>
                     </div>
                 </div>
@@ -148,13 +133,14 @@
             </div>
 
             <div class="row">
+                {% for service in services %}
                 <!-- Services Step Box Start -->
                 <div class="col-lg-4 col-md-12">
                     <div class="step-box wow fadeInUp" data-wow-delay="0.50s">
                         <!-- Step Box Img start -->
                         <div class="step-img">
                             <figure class="image-anime">
-                                <img src="{% static 'web/images/services-1.jpg' %}" alt="">
+                                <img src="{{service.service_image.url}}" alt="{{service.service_name}}">
                             </figure>
                         </div>
                         <!-- Step Box Img end -->
@@ -163,74 +149,18 @@
                         <div class="step-body">
                             <!-- Step Icon start -->
                             <div class="step-icon">
-                                <img src="{% static 'web/images/icon-services-1.svg' %}" alt="">
                             </div>
                             <!-- Step Icon end -->
 
-                            <h3>Health Insurance</h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-                            <a href="services-single.html" class="btn-read-more">Read More</a>
+                            <h3>{{service.service_name}}</h3>
+                            <p>{{service.content|truncatechars:100|safe}}</p>
+                            <a href="{{service.get_absolute_url}}" class="btn-read-more">Read More</a>
                         </div>
                         <!-- Step Box Body end -->
                     </div>
                 </div>
                 <!-- Services Step Box End -->
-
-                <!-- Services Step Box Start -->
-                <div class="col-lg-4 col-md-12">
-                    <div class="step-box wow fadeInUp" data-wow-delay="0.75s">
-                        <!-- Step Box Img start -->
-                        <div class="step-img">
-                            <figure class="image-anime">
-                                <img src="{% static 'web/images/services-2.jpg' %}" alt="">
-                            </figure>
-                        </div>
-                        <!-- Step Box Img end -->
-
-                        <!-- Step Box Body start -->
-                        <div class="step-body">
-                            <!-- Step Icon start -->
-                            <div class="step-icon">
-                                <img src="{% static 'web/images/icon-services-2.svg' %}" alt="">
-                            </div>
-                            <!-- Step Icon end -->
-
-                            <h3>Car Insurance</h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-                            <a href="services-single.html" class="btn-read-more">Read More</a>
-                        </div>
-                        <!-- Step Box Body end -->
-                    </div>
-                </div>
-                <!-- Services Step Box End -->
-
-                <!-- Services Step Box Start -->
-                <div class="col-lg-4 col-md-12">
-                    <div class="step-box wow fadeInUp" data-wow-delay="1.0s">
-                        <!-- Step Box Img start -->
-                        <div class="step-img">
-                            <figure class="image-anime">
-                                <img src="{% static 'web/images/services-3.jpg' %}" alt="">
-                            </figure>
-                        </div>
-                        <!-- Step Box Img end -->
-
-                        <!-- Step Box Body start -->
-                        <div class="step-body">
-                            <!-- Step Icon start -->
-                            <div class="step-icon">
-                                <img src="{% static 'web/images/icon-services-3.svg' %}" alt="">
-                            </div>
-                            <!-- Step Icon end -->
-
-                            <h3>Home Insurance</h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-                            <a href="services-single.html" class="btn-read-more">Read More</a>
-                        </div>
-                        <!-- Step Box Body end -->
-                    </div>
-                </div>
-                <!-- Services Step Box End -->
+                {% endfor %}
             </div>
 
             <div class="row">
@@ -251,7 +181,7 @@
                 <div class="col-lg-6 col-md-12">
                     <!-- Consulations Image start -->
                     <div class="consulations-img text-lg-start text-center wow fadeInUp" data-wow-delay="0.50s">
-                        <img src="{% static 'web/images/get-consulations.png" alt="">
+                        <img src="{% static 'web/images/get-consulations.png' %}" alt="">
                     </div>
                     <!-- Consulations Image end -->
                 </div>
@@ -260,27 +190,20 @@
                     <div class="consulations-content">
                         <!-- Section Title start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp" data-wow-delay="0.25s">Get Consultations</h3>
-                            <h2 class="text-anime">5 Years of Excellence in The Insurance Industry.</h2>
+                            <h3 class="wow fadeInUp" data-wow-delay="0.25s">OUR STRATEGY
+                            </h3>
+                            <h2 class="text-anime">We Partner In Your Success</h2>
                         </div>
                         <!-- Section Title end -->
 
                         <!-- Consulations Body start -->
                         <div class="consulations-body">
-                            <p class="wow fadeInUp" data-wow-delay="0.50s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                            <p class="wow fadeInUp" data-wow-delay="0.50s">We are committed to the highest levels of technical expertise and professional standards. We believe, every client is unique and our professional solutions should be tailored to our client requirements. In IHPCA, we believe we can provide exactly w hat the clients need, no less or no more. We belive that we will be the best partners in your success. We are the Chartered Accountants in Qatar.</p>
                         </div>
                         <!-- Consulations Body end -->
-
-                        <!-- List Icon start -->
-                        <div class="list-icon wow fadeInUp" data-wow-delay="0.75s">
-                            <ul>
-                                <li><span>01.</span> can save your money.</li>
-                                <li><span>02.</span> Our life insurance is flexible</li>
-                            </ul>
-                        </div>
                         <!-- List Icon end -->
 
-                        <a href="contact-us.html" class="btn-default wow fadeInUp" data-wow-delay="1.0s">Contact Now</a>
+                        <a href="{% url 'web:contact' %}" class="btn-default wow fadeInUp" data-wow-delay="1.0s">Contact Now</a>
 
                     </div>
                 </div>
@@ -300,7 +223,7 @@
                             <img src="{% static 'web/images/icon-happy-customers.svg' %}" alt="">
                         </div>
                         <div class="counter-body">
-                            <h3><span class="counter">1150</span>+</h3>
+                            <h3><span class="counter">97</span>%</h3>
                             <p>Happy Customers</p>
                         </div>
                     </div>  
@@ -314,8 +237,9 @@
                             <img src="{% static 'web/images/icon-insurance-careers.svg' %}" alt="">
                         </div>
                         <div class="counter-body">
-                            <h3><span class="counter">150</span>+</h3>
-                            <p>Insurance Careers</p>
+                            <h3><span class="counter">93</span>%</h3>
+                            <p>Returning Customers
+                            </p>
                         </div>
                     </div>  
                     <!-- Counter Box end -->
@@ -368,98 +292,29 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-12">
+                {% for team in teams %}
+                <div class="col-lg-3 col-12">
                     <!-- Team Member Item Start -->
                     <div class="team-member-card text-center wow fadeInUp" data-wow-delay="0.50s">
                         <!-- Team Img start -->
                         <div class="team-img">
                             <figure class="image-anime">
-                                <img src="{% static 'web/images/team-1.jpg' %}" alt="">
+                                <img src="{{team.image.url}}" alt="">
                             </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>                               
-                            </div>
                         </div>
                         <!-- Team Img end -->
 
                         <!-- Team Body start -->
                         <div class="team-content">
-                            <h3>Michael Johnson</h3>
-                            <p>founder</p>
+                            <h3>{{team.name}}</h3>
+                            <p>{{team.position}}</p>
                             <div class="divider-separator"></div>
                         </div>
                         <!-- Team Body end -->
                     </div>
                     <!-- Team Member Item End -->
                 </div>
-
-                <div class="col-lg-4 col-12">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-card text-center wow fadeInUp" data-wow-delay="0.75s">
-                        <!-- Team Img start -->
-                        <div class="team-img">
-                            <figure class="image-anime">
-                                <img src="{% static 'web/images/team-2.jpg' %}" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img end -->
-
-                        <!-- Team Body start -->
-                        <div class="team-content">
-                            <h3>Jessica Anderson</h3>
-                            <p>co-founder & CEO</p>
-                            <div class="divider-separator"></div>
-                        </div>
-                        <!-- Team Body end -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
-
-                <div class="col-lg-4 col-12">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-card text-center wow fadeInUp" data-wow-delay="1.0s">
-                        <!-- Team Img start -->
-                        <div class="team-img">
-                            <figure class="image-anime">
-                                <img src="{% static 'web/images/team-3.jpg' %}" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img end -->
-
-                        <!-- Team Body start -->
-                        <div class="team-content">
-                            <h3>Brian Wilson</h3>
-                            <p>Claims Representative</p>
-                            <div class="divider-separator"></div>
-                        </div>
-                        <!-- Team Body end -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -482,52 +337,28 @@
                 <div class="col-lg-7 col-12">
                     <!-- Section Title start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Why Choose us</h3>
-                        <h2 class="text-anime">Why you should choose Zorvixa ?</h2>
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">OUR VALUES</h3>
+                        <h2 class="text-anime">A Financial Plan Is a Life Plan!
+                        </h2>
                     </div>
                     <!-- Section Title end -->
 
                     <!-- Why Choose Body start -->
                     <div class="why-choose-body">
-                        <p class="wow fadeInUp" data-wow-delay="0.50s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.50s">Considered amongst the best chartered accountant firms in Qatar, our mission is to serve our clients by providing client -focused, elite level accountancy and financial service that as sure fiscal responsibility inline with sound business practices and regulatory requirements. Whether you require the servic
+                            es of a rental dispute lawyer, or need assistance with compa
+                            ny formation, company liquidation and corporate accounting then IHP Chartered Accountants is just where you should be.</p>
                         
                         <ul class="why-choose-list wow fadeInUp" data-wow-delay="0.75s">
-                            <li>100% Safe Money</li>
-                            <li>Save your Money</li>
-                            <li>Fast Process</li>
-                            <li>Easy Process System</li>
-                            <li>Anytime Money Back</li>
-                            <li>Digital Insurance Policy</li>
+                            <li>Top-tier chartered accountancy</li>
+                            <li>Client-focused services</li>
+                            <li>Fiscal responsibility assurance</li>
+                            <li>Rental dispute resolution
+                            </li>
+                            <li>Company formation assistance
+                            </li>
+                            <li>Corporate accounting expertise </li>
                         </ul>
-
-                        <!-- Support Team Section start -->
-                        <div class="support-team-section wow fadeInUp" data-wow-delay="1.0s">
-                            <!-- Video Section start -->
-                            <div class="video-section">
-                                <div class="video-section-img">
-                                    <figure class="image-anime">
-                                        <img src="{% static 'web/images/why-choose-us-video-img.jpg' %}" alt="">
-                                    </figure>   
-                                </div>
-                                <div class="video-section-play-btn">
-                                    <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video"><i class="fa-regular fa-circle-play"></i></a>
-                                </div>
-                            </div>
-                            <!-- Video Section end -->
-
-                            <!-- Support Team Body start -->
-                            <div class="support-team-body">
-                                <img src="{% static 'web/images/icon-support-team.svg' %}" alt="">
-                                <h3>24/7 Support Team</h3>
-
-                                <ul class="support-team-contact">
-                                    <li><a href="#" class="contact-btn">+0123 456 789</a></li>
-                                    <li><a href="#" class="support-mail-btn">info@domain.com</a></li>
-                                </ul>
-                            </div>
-                            <!-- Support Team Body end -->
-                        </div>
-                        <!-- Support Team Section end -->
                     </div>
                 </div>
                 <!-- Why Choose Body end -->
@@ -717,6 +548,7 @@
             </div>
 
             <div class="row">
+                {% for blog in blogs  %}
                 <!-- Post item Start -->
                 <div class="col-lg-4 col-md-12">
                     <div class="post-item wow fadeInUp" data-wow-delay="0.50s">
@@ -724,118 +556,32 @@
                         <div class="post-header">
                             <!-- Feature Img start -->
                             <div class="feature-img">
-                                <a href="blog-single.html">
+                                <a href="{{blog.get_absolute_url}}">
                                     <figure class="image-anime">
-                                        <img src="{% static 'web/images/post-1.jpg' %}" alt="">
+                                        <img src="{{blog.image.url}}" alt="">
                                     </figure>
                                 </a>
                             </div>
                             <!-- Feature Img end -->
-
-                            <!-- Post Meta start -->
-                            <div class="post-meta">
-                                <ul>
-                                    <li>Business Insurance</li>
-                                </ul>
-                            </div>
-                            <!-- Post Meta end -->
                         </div>
                         <!-- Post Feature Img end -->
 
                         <!-- Post Content start -->
                         <div class="post-content">
                             <div class="post-header">   
-                                <h2><a href="blog-single.html">Understanding Your Insurance Coverage</a></h2>
+                                <h2><a href="{{blog.get_absolute_url}}">{{blog.title|truncatechars:30|safe}}</a></h2>
 
-                                <p>In today's complex world, understanding your insurance coverage is more important than ever.</p>
+                                <p>{{blog.content|truncatechars:100|safe}}</p>
 
-                                <a href="blog-single.html" class="btn-read-more">Read more</a>
+                                <a href="{{blog.get_absolute_url}}" class="btn-read-more">Read more</a>
                             </div>
                         </div>
                         <!-- Post Content end -->
                     </div>
                 </div>
                 <!-- Post item End -->
+                {% endfor %}
 
-                <!-- Post item Start -->
-                <div class="col-lg-4 col-md-12">
-                    <div class="post-item wow fadeInUp" data-wow-delay="0.75s">
-                        <!-- Post Header start -->
-                        <div class="post-header">
-                            <!-- Feature Img start -->
-                            <div class="feature-img">
-                                <a href="blog-single.html">
-                                    <figure class="image-anime">
-                                        <img src="{% static 'web/images/post-2.jpg' %}" alt="">
-                                    </figure>
-                                </a>
-                            </div>
-                            <!-- Feature Img end -->
-
-                            <!-- Post Meta start -->
-                            <div class="post-meta">
-                                <ul>
-                                    <li>Home Insurance</li>
-                                </ul>
-                            </div>
-                            <!-- Post Meta end -->
-                        </div>
-                        <!-- Post Feature Img end -->
-
-                        <!-- Post Content start -->
-                        <div class="post-content">
-                            <div class="post-header">   
-                                <h2><a href="blog-single.html">Tips for Choosing the Right Insurance Policy</a></h2>
-
-                                <p>In today's complex world, understanding your insurance coverage is more important than ever.</p>
-
-                                <a href="blog-single.html" class="btn-read-more">Read more</a>
-                            </div>
-                        </div>
-                        <!-- Post Content end -->
-                    </div>
-                </div>
-                <!-- Post item End -->
-
-                <!-- Post item Start -->
-                <div class="col-lg-4 col-md-12">
-                    <div class="post-item wow fadeInUp" data-wow-delay="1.0s">
-                        <!-- Post Header start -->
-                        <div class="post-header">
-                            <!-- Feature Img start -->
-                            <div class="feature-img">
-                                <a href="blog-single.html">
-                                    <figure class="image-anime">
-                                        <img src="{% static 'web/images/post-3.jpg' %}" alt="">
-                                    </figure>
-                                </a>
-                            </div>
-                            <!-- Feature Img end -->
-
-                            <!-- Post Meta start -->
-                            <div class="post-meta">
-                                <ul>
-                                    <li>Car Insurance</li>
-                                </ul>
-                            </div>
-                            <!-- Post Meta end -->
-                        </div>
-                        <!-- Post Feature Img end -->
-
-                        <!-- Post Content start -->
-                        <div class="post-content">
-                            <div class="post-header">   
-                                <h2><a href="blog-single.html">How to Safeguard Your Financial Well-being</a></h2>
-
-                                <p>In today's complex world, understanding your insurance coverage is more important than ever.</p>
-
-                                <a href="blog-single.html" class="btn-read-more">Read more</a>
-                            </div>
-                        </div>
-                        <!-- Post Content end -->
-                    </div>
-                </div>
-                <!-- Post item End -->
             </div>
         </div>
     </div>

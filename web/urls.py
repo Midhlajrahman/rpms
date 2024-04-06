@@ -9,10 +9,10 @@ app_name = "web"
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/',views.about,name='about'),
-    path('blog/',views.BlogView.as_view(),name='blog'),
-    path('services/',views.ServicesView.as_view(),name='services'),
-    path('career/<slug:slug>/',views.CareerDetailView.as_view(),name='career_detail'),
-    path('contact/',views.ContactView.as_view(),name='contact'),
-
-    path('gallery/',views.GalleryView.as_view(),name='gallery'),
+    path("services/", views.service, name="service"),
+    path("service/<slug:slug>/", views.service_details, name="service_details"),
+    path("team/<slug:slug>/", views.team, name="team"),
+    path("blog/", views.blog, name="blog"),
+    path("blogs/<slug:slug>/", views.blog_details, name="blog_details" ),
+    path("contact/", views.contact, name="contact"),
 ]

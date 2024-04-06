@@ -3,227 +3,114 @@ from tinymce.models import HTMLField
 from django.urls import reverse_lazy
 from easy_thumbnails.fields import ThumbnailerImageField
 
-
-
 # Create your models here.
 
-class CourseCategory(models.Model):
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
-    order = models.IntegerField(default=0)
-
-    def get_course(self):
-        return Course.objects.filter(category=self)
-    
-    def subcategory(self):
-        return CourseSubcategory.objects.filter(category=self)
-    
-    
+class Service(models.Model):
+    service_name = models.CharField(max_length=120)
+    service_image = models.ImageField(upload_to="service-images/", blank=True, null=True)
+    slug = models.SlugField(unique=True, max_length=100, blank=True)
+    content = HTMLField(blank=True,null=True)
     class Meta:
-        ordering = ["order"]
-        verbose_name = ('Categories')
-        verbose_name_plural = ('Categories')
-        
+        ordering = ("id",)
+        verbose_name = 'Service'
+        verbose_name_plural = 'Services'
 
-    def __str__(self):
-        return self.name
-
-
-class CourseSubcategory(models.Model):
-    category=models.ForeignKey("web.CourseCategory",on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
-    
-
-    class Meta:
-        verbose_name = ('Course Subcategory')
-        verbose_name_plural = ('Course Subcategories')
-    
-    def get_course(self):
-        return Course.objects.filter(subcategory=self)
-    
-    def __str__(self):
-        return self.name
-    
-
-class Course(models.Model):
-    category = models.ForeignKey(
-        "web.CourseCategory",
-        verbose_name="course Category",
-        related_name="course_category",
-        on_delete=models.CASCADE,
-    )
-    subcategory = models.ForeignKey(
-        "web.CourseSubcategory",
-        verbose_name="course subcategory",
-        related_name="course_subcategory",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True
-    )
-    title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
-    image = ThumbnailerImageField(
-        upload_to="media/",
-    )
-    order=models.IntegerField(default=1)
-    description = HTMLField()
-
-    # cariculum = HTMLField(null=True, blank=True)
-      
-    
-    def get_include(self):
-        return Instructor.objects.filter(course=self)
-    
     def get_absolute_url(self):
-        return reverse_lazy('web:course_detail', kwargs={'slug': self.slug})
-    
+        return reverse_lazy("web:service_details", kwargs={"slug": self.slug})
+
+    def get_faq(self):
+            return ServiceFaq.objects.filter(service=self)
 
     def __str__(self):
-       return self.title
-    
-    
-class CourseEnquiry(models.Model):
-    course = models.ForeignKey(
-        "web.Course",
-        verbose_name="course",
-        related_name="course_enquiry",
-        on_delete=models.CASCADE,
-    )
-    name = models.CharField(max_length=255)
-    phone = models.CharField(max_length=255)
+        return str(self.service_name)
+
+
+class ServiceEnquiry(models.Model):
+    service = models.ForeignKey("web.Service", on_delete=models.CASCADE)
+    name = models.CharField(max_length=150)
+    email = models.EmailField()
+    mobile = models.CharField(max_length=120, blank=True, null=True)
     message = models.TextField()
-    
-    
+
     class Meta:
-        verbose_name = ('Course Enquiry')
-        verbose_name_plural = ('Course Enquiries')
+        verbose_name = 'Service Enquiry'
+        verbose_name_plural = 'Service Enquiries'
 
     def __str__(self):
-        return self.name
-    
-    
-class Instructor(models.Model):
-    course = models.ForeignKey(
-        "web.Course",
-        verbose_name="course",
-        related_name="course_include",
-        on_delete=models.CASCADE,
-    )
-    name = models.CharField(max_length=255)
-    image=models.ImageField(upload_to="media/")
-    description = models.TextField()
+        return str(self.name)
 
-    def __str__(self):
-        return self.name
+class ServiceFaq(models.Model):
+    service = models.ForeignKey("web.Service", on_delete=models.CASCADE, blank=True, null=True)
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
 
-
-class Testimonial(models.Model):
-  image = models.ImageField(upload_to='media')
-  name = models.CharField(max_length=255)
-  description = models.TextField()
-
-
-class Career(models.Model):
-    image = models.ImageField(upload_to='media',help_text="recomended size 50x50")
-    title = models.CharField(max_length=255)
-    slug=models.SlugField(unique=True)
-    description = HTMLField()
-    
-    def __str__(self):
-        return self.title
-    
-
-
-class Subject(models.Model):
-    name = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
-
-
-
-class CarreerEnquiry(models.Model):
-    EXPERIENCE=[
-        ('Less Then 1 Year', 'Less Then 1 Year'),
-        ('1 Year', '1 Year'),
-        ('2 Year', '2 Year'),
-        ('3 + Year', '3 + Year'),
-        
-    ]
-    WORK=[
-        ('Full Time', 'Full Time'),
-        ('Part Time', 'Part Time'),
-    ]
-    YESNO=[
-        ('YES','Yes'),
-        ('NO','No'),
-    ]
-    HEAR=[
-        ('Social Media', 'Social Media'),
-        ('Friend', 'Friend'),
-        ('Others', 'Others'),
-    ]
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=255)
-    career=models.ForeignKey("web.Career",on_delete=models.CASCADE)
-    job_role=models.ForeignKey("web.Course",on_delete=models.CASCADE)
-    willing_to_work=models.CharField(max_length=255,choices=WORK)
-    currently_employed=models.CharField(max_length=255,choices=YESNO)
-    qualification=models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
-    hear_about_us=models.CharField(max_length=255,choices=HEAR)
-    cv = models.FileField(upload_to="media")
-    
-    
     class Meta:
-        verbose_name = ('Carreer Enquiry')
-        verbose_name_plural = ('Carreer Enquiries')
-    
-    def __str__(self):
-        return self.name
-    
+        ordering = ("id",)
+        verbose_name = 'Service FAQ'
+        verbose_name_plural = 'Service FAQs'
 
-    
-class Contact(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=255)
-    message = models.TextField()
-    
     def __str__(self):
-        return self.name
-    
-    
-class DemoRegister(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone = models.CharField(max_length=255)
-    
+        return str(self.question)
+
+
+class Blog(models.Model):
+    title = models.CharField(max_length=120)
+    slug = models.SlugField(unique=True, max_length=100, blank=True)
+    image = models.ImageField(upload_to="blog-images/",)
+    content = HTMLField()
+
+    def get_absolute_url(self):
+        return reverse_lazy("web:blog_details", kwargs={"slug": self.slug})
+
+    class Meta:
+        ordering = ("id",)
+        verbose_name = 'Blog'
+        verbose_name_plural = 'Blogs'
+
     def __str__(self):
-        return self.name
+        return str(self.title)
 
 
 class Team(models.Model):
-    order = models.IntegerField(unique=True,blank=True,null=True)
-    name = models.CharField(max_length=255)
-    designation = models.CharField(max_length=255)
-    small_image = ThumbnailerImageField(
-        upload_to="team/",help_text="recomended size 100x100"
-    )
-    big_image = ThumbnailerImageField(
-        upload_to="team/",help_text="recomended size 250x350"
-    )
-    description = models.TextField()
-    
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        ordering = ['order']
-        
-        
+    name = models.CharField(max_length=150)
+    position = models.CharField(max_length=150,blank=True,null=True)
+    slug = models.SlugField(unique=True, max_length=100, blank=True)
+    image = models.ImageField(blank=True,null=True, upload_to="team-images",)
+    description = HTMLField(blank=True,null=True)
 
-class DemoVideo(models.Model):
-    url=models.TextField(null=True,blank=True,help_text="past embed url here")
-    image = models.ImageField(upload_to="media/",null=True,blank=True)
+    class Meta:
+        verbose_name = 'Team'
+        verbose_name_plural = 'Teams'
+
+    def __str__(self):
+        return str(self.name)
+
+
+class Testimonials(models.Model):
+    name = models.CharField(max_length=150)
+    position = models.CharField(max_length=150,blank=True,null=True)
+    image = models.ImageField(blank=True,null=True, upload_to="testimonial-images",)
+    description = models.TextField(blank=True,null=True)
+
+    class Meta:
+        verbose_name = 'Testimonial'
+        verbose_name_plural = 'Testimonials'
+
+    def __str__(self):
+        return str(self.name)
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=120)
+    timestamp = models.DateTimeField(db_index=True,auto_now_add=True)
+    email = models.EmailField(blank=True,null=True)
+    phone = models.CharField(max_length=120,blank=True,null=True)
+    subject = models.CharField(max_length=120,blank=True,null=True)
+    message = models.TextField()
+
+    class Meta:
+        verbose_name = 'Contact'
+        verbose_name_plural = 'Contacts'
+
+    def __str__(self):
+        return str(self.name)

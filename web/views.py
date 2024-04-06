@@ -1,122 +1,122 @@
-from django.shortcuts import render
-from django.http import JsonResponse
-from django.views.generic import ListView, DetailView, TemplateView
-from django.views.generic.edit import FormView
-
-from .models import Team, Testimonial, Career, Course,CourseCategory,DemoVideo
-from .forms import CareerEnquiryForm,ContactForm,DemoRegisterForm,CourseEnquiryForm
-
+import urllib.parse
+from django.shortcuts import render,redirect
+from .models import Team
+from .models import Service, ServiceFaq
+from .models import Blog
+from .models import Testimonials
+from .forms import ContactForm
+from .forms import ServiceEnquiryForm
 
 def index(request):
-    testimonial = Testimonial.objects.all()
-    tutions = Career.objects.all()
-    coursecategorys = CourseCategory.objects.all()
-    courses = Course.objects.all().order_by('order')
-
-
-    context = {
-        "testimonial" : testimonial,
-        "tutions" : tutions,
-        "course" : courses,
-        "coursecategorys" : coursecategorys,
-        }
-    return render(request, 'web/index.html', context)
-
+    services =Service.objects.all()[:3]
+    blogs =Blog.objects.all()[:3]
+    testimonials =Testimonials.objects.all()
+    teams = Team.objects.all()
+    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams}
+    return render(request, "web/index.html", context)
 
 def about(request):
     teams = Team.objects.all()
-    return render(request, 'web/about.html',{"teams":teams})
+    context = {"is_about": True, "teams": teams}
+    return render(request, "web/about.html", context)
 
 
-
-class BlogView(ListView):
-    model = Career
-    template_name = "web/blog.html"
-
-
-class ServicesView(ListView):
-    model = Career
-    template_name = "web/services.html"
+def service(request):
+    services =Service.objects.all()
+    context = {"is_service": True,"services": services }
+    return render(request, "web/service.html", context)
 
 
-class GalleryView(ListView):
-    model = Career
-    template_name = "web/career.html" 
-    
-    
-class DemoRegisterView(FormView):
-    form_class = DemoRegisterForm
+def service_details(request, slug):
+    service = Service.objects.get(slug=slug)
+    service_faqs = ServiceFaq.objects.filter(service=service)
+    other_services = Service.objects.exclude(slug=slug)
 
-    def form_valid(self, form):
-        form.save()
-        response_data = { "status": "true","title": "Successfully submitted","message": "We valued your request for the demo,our team will revert to you at the soonest",}
-        return JsonResponse(response_data)
+    if request.method == 'POST':
+        form = ServiceEnquiryForm(request.POST)
+        if form.is_valid():
+            enquiry = form.save(commit=False)
+            enquiry.service = service
+            enquiry.save()
 
-    def form_invalid(self, form):
-        response_data = {"status": "false","title": "Form validation error",}
-        return JsonResponse(response_data, status=400)
-    
-    
-class DemoImageView(TemplateView):
-    template_name = "web/image.html"
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["demos"] = DemoVideo.objects.all()
-        return context
+            message = (
+                f"service Name: {enquiry.service}\n"
+                f'Name: {form.cleaned_data["name"]} \n'
+                f'Phone: {form.cleaned_data["mobile"]}\n'
+                f'Email: {form.cleaned_data["email"]}\n'
+                f'Message: {form.cleaned_data["message"]}\n'
+            )
 
+            whatsapp_api_url = "https://api.whatsapp.com/send"
+            phone_number = "+917595973478"
+            encoded_message = urllib.parse.quote(message)
+            whatsapp_url = f"{whatsapp_api_url}?phone={phone_number}&text={encoded_message}"
 
+            return redirect(whatsapp_url)
+        else:
+            print(form.errors)
+    else:
+        form = ServiceEnquiryForm()
 
-def courses(request):
-    coursecategorys = CourseCategory.objects.all()
-    course = Course.objects.all().order_by('order')
-    context={'coursecategorys':coursecategorys,"course":course}
-    return render(request, 'web/courses.html',context)
+    context = {
+        "is_service": True,
+        "service": service,
+        "service_faqs": service_faqs,
+        "other_services": other_services,
+        "form": form,
+    }
 
-
-class CourseDetailView(DetailView,FormView):
-    model = Course
-    form_class = CourseEnquiryForm
-    template_name = "web/course-details.html"
-
-    def form_valid(self, form):
-        form.save()
-        response_data = { "status": "true","title": "Thankyou for your interest with jamia","message": "Your application had submitted successfully.",}
-        return JsonResponse(response_data)
-
-    def form_invalid(self, form):
-        print(form.errors)
-        response_data = {"status": "false","title": "Form validation error",}
-        return JsonResponse(response_data, status=400)
+    return render(request, "web/services-single.html", context)
 
 
-
-class CareerDetailView(DetailView,FormView):
-    model = Career
-    form_class = CareerEnquiryForm
-    template_name = "web/career-details.html"
-
-    def form_valid(self, form):
-        form.save()
-        response_data = { "status": "true","title": "Successfully submitted","message": "Message successfully updated",}
-        return JsonResponse(response_data)
-
-    def form_invalid(self, form):
-        print(form.errors)
-        response_data = {"status": "false","title": "Form validation error",}
-        return JsonResponse(response_data, status=400)
+def blog(request):
+    blogs =Blog.objects.all()
+    context = {"is_blog": True,"blogs": blogs,}
+    return render(request, "web/blog.html", context)
 
 
+def blog_details(request,slug):
+    blog = Blog.objects.get(slug=slug)
+    recentposts = Blog.objects.exclude(slug=slug)
+    context = {"is_blog": True,"blog": blog,"recentposts": recentposts}
+    return render(request, "web/blog-single.html", context)
 
-class ContactView(FormView):
-    form_class = ContactForm
-    template_name = "web/contact.html"
+def team(request,slug):
+    team = Team.objects.get(slug=slug)
+    context = {"is_about": True,"team": team,}
+    return render(request, "web/team.html", context)
 
-    def form_valid(self, form):
-        form.save()
-        response_data = { "status": "true","title": "Thankyou for your quirey submitted","message": "our team will revert to you at the earliest ",}
-        return JsonResponse(response_data)
 
-    def form_invalid(self, form):
-        response_data = {"status": "false","title": "Form validation error",}
-        return JsonResponse(response_data, status=400)
+def contact(request):
+    form = ContactForm(request.POST or None)
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            enquiry = form.save(commit=False)
+            enquiry.contact = contact
+            enquiry.save()
+
+            message = (
+                f'Name: {form.cleaned_data["name"]} \n'
+                f'Phone: {form.cleaned_data["phone"]}\n'
+                f'Email: {form.cleaned_data["email"]}\n'
+                f'Subject: {form.cleaned_data["subject"]}\n'
+                f'Message: {form.cleaned_data["message"]}\n'
+            )
+
+            whatsapp_api_url = "https://api.whatsapp.com/send"
+            phone_number = "+917595973478"
+            encoded_message = urllib.parse.quote(message)
+            whatsapp_url = f"{whatsapp_api_url}?phone={phone_number}&text={encoded_message}"
+
+            return redirect(whatsapp_url)
+
+    else:
+        form = ContactForm()
+
+    context ={"is_contact": True, "form": form}
+    return render(request, "web/contact.html", context)
+
+
+def handler404(request, exception):
+    return render(request, "web/404.html", status=404)

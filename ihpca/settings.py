@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'jamia.urls'
+ROOT_URLCONF = 'ihpca.urls'
 
 TEMPLATES = [
     {
@@ -62,7 +62,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'jamia.wsgi.application'
+WSGI_APPLICATION = 'ihpca.wsgi.application'
 
 
 # Database

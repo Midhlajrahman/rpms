@@ -1,36 +1,32 @@
+# web/forms.py
 from django import forms
-from .models import CarreerEnquiry,Contact,DemoRegister ,CourseEnquiry
+from django.utils.translation import gettext_lazy as _
+from .models import Contact
+from .models import ServiceEnquiry
+from django.forms import widgets
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = "__all__"
-
-class CourseEnquiryForm(forms.ModelForm):
-    class Meta:
-        model = CourseEnquiry
-        fields = "__all__"
-
-class CareerEnquiryForm(forms.ModelForm):
-    class Meta:
-        model = CarreerEnquiry
-        fields = "__all__"
+        exclude = ("timestamp",)
         widgets = {
-            'job_role': forms.Select(attrs={'class': 'form-select'}),
-            'willing_to_work': forms.Select(attrs={'class': 'form-select'}),
-            'currently_employed': forms.Select(attrs={'class': 'form-select'}),
-            'hear_about_us': forms.Select(attrs={'class': 'form-select'})
-    
+            "name": widgets.TextInput(attrs={"class": "required form-control", "placeholder": "Your Name*"}),
+            "phone": widgets.TextInput(attrs={"class": "required form-control", 'type': 'number',"placeholder": "Your Phone*"}),
+            "email": widgets.EmailInput(attrs={"class": "required form-control","placeholder": "Your Email*",}),
+            "subject": widgets.TextInput(attrs={"class": "required form-control","placeholder": "Subject",}),
+            "message": widgets.Textarea(attrs={"class": "required form-control","placeholder": "Enter Your Message*",}),
         }
-       
-       
-       
-class DemoRegisterForm(forms.ModelForm):
+
+class ServiceEnquiryForm(forms.ModelForm):
     class Meta:
-        model = DemoRegister
-        fields = "__all__"
+        exclude = ("service",)
+        model = ServiceEnquiry
         widgets = {
-            'course': forms.Select(attrs={'class': 'form-select'}),
-    
+            "name": widgets.TextInput(attrs={"class": "form-control input required", "placeholder": "Name"}),
+            "mobile": widgets.TextInput(
+                attrs={"class": "required form-control input", 'type': 'number', "placeholder": "Mobile"}
+            ),
+            "email": widgets.EmailInput(attrs={"class": "required form-control input", "placeholder": "Email"}),
+            "message": widgets.Textarea(attrs={"class": "required form-control input", "placeholder": "Message",'rows':4, 'cols':15}),
         }
