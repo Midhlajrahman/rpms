@@ -1,6 +1,7 @@
 {% extends "web/base.html" %}
 {% load static %}
 {% block content %}
+
     <!-- Subpage Section Start -->
     <div class="page-header parallaxie">
         <div class="container">
@@ -23,53 +24,44 @@
     </div>
     <!-- Subpage Section End -->
 
-    <!-- About Information Section Start -->
-    <div class="about-information">
+    <!-- About Section Start -->
+    <div class="about-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 order-lg-1 order-2">
-                    <!-- About Video Section start -->
-                    <div class="about-video-section fadeInUp" data-wow-delay="0.50s">
-                        <!-- About Video Image start -->
-                        <div class="about-video-img">
-                            <figure class="image-anime">
-                                <img src="{% static 'web/images/about-info-video-img.jpg' %}" alt="">
-                            </figure>                            
-                        </div>
-                        <!-- About Video Image end -->
-
-                        <!-- About Video Btn start -->
-                        <div class="about-play-btn">
-                            <a href="https://www.youtube.com/watch?v=u31qwQUeGuM" class="popup-video"><i class="fa-regular fa-circle-play"></i></a>
-                        </div>
-                        <!-- About Video Btn end -->
-                    </div>
-                    <!-- About Video Section start -->
+                    <!-- About video start -->
+					<div class="about-video wow fadeInLeft" data-wow-delay="0.25s">
+                        <figure class="image-anime">
+                            <img src="{% static 'web/images/video-placeholder.jpg' %}" alt="">
+                        </figure>
+					</div>
+					<!-- About video end -->
                 </div>
 
                 <div class="col-lg-6 col-md-12 order-lg-2 order-1">
-                    <!-- Section Ttile start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Welcome to Zorvixa</h3>
-                        <h2 class="text-anime">Award Winning Insurance Company Over 25+ Years</h2>
-                    </div>
-                    <!-- Section Ttile end -->
+                    <div class="about-content">
+                        <!-- Section Title start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp" data-wow-delay="0.25s">IHP CHARTERED ACCOUNTANTS</h3>
+                            {% comment %} <h2 class="text-anime">Audit, Tax, Accounting & Business Advisory Firm In Doha - Qatar</h2> {% endcomment %}
+                            <h2 class="text-anime">Audit, Tax, Accounting & Business Advisory Firm In Doha - Qatar</h2>
 
-                    <!-- About Info Body start -->
-                    <div class="about-info-body wow fadeInUp" data-wow-delay="0.50s">
-                        <ul>
-                            <li><span>01.</span>Best Insurance Agency</li>
-                            <li><span>02.</span>Fast & Easy Process</li>
-                            <li><span>03.</span>Trusted & Experience Insurance</li>
-                            <li><span>04.</span>Quality And Literacy Of Work</li>
-                        </ul>
+                        </div>
+                        <!-- Section Title end -->
+
+                        <div class="about-body">
+                            <p class="wow fadeInUp" data-wow-delay="0.50s">ISLAM HENDAWY MOHAMED AND PARTNERS CHARTERED ACCOUNTANT–
+
+                                (IHP) is a professional team with regional experiences
+                                in the Middle East and GCC markets to provide highly professional services in Assurance, Audit, Accounting, Tax, Business Consulting, Forensic Accounting, Fundi-ng Solutions, Liquidation and Arbitration Consultancy Business Legal, Litigation Consultancy.
+                                We are the Best Chartered Accountant Firms in Qatar.</p>
+                        </div>  
                     </div>
-                    <!-- About Info Body end -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- About Information Section End -->
+    <!-- About Section End -->
 
     <!-- Our Approach Section Start -->
     <div class="our-approach-section">
@@ -78,17 +70,16 @@
                 <div class="col-md-12">
                     <!-- Section Title start -->
                     <div class="section-title text-center">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Our Vision</h3>
-                        <h2 class="text-anime">Our Vision is to make our firm the fisrt choice
-                            after the big 4 audit firms.</h2>
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Navigating Towards Success</h3>
+                        <h2 class="text-anime">Our Guiding Philosophy</h2>
                     </div>
                     <!-- Section Title end -->
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <div class="step-box wow fadeInUp" data-wow-delay="0.50s">
+                <div class="col-lg-3 col-md-12">
+                    <div class="step-box vision-box wow fadeInUp" data-wow-delay="0.50s">
                         <!-- Step Box Img start -->
                         <div class="step-img">
                             <figure class="image-anime">
@@ -105,16 +96,17 @@
                             </div>
                             <!-- Step Icon end -->
 
-                            <h3>Our Mission</h3>
+                            <h3>Our Vision</h3>
 
-                            <p>Our mission is to consistently add value to our clients by providing high quality services to building a long-term and professional relationship with our clients.</p>
+                            <p>Our Vision is to make our firm the fisrt choice
+                                after the big 4 audit firms.</p>
                         </div>
                         <!-- Step Box Body end -->
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-12">
-                    <div class="step-box wow fadeInUp" data-wow-delay="0.75s">
+                <div class="col-lg-3 col-md-12">
+                    <div class="step-box wow fadeInUp vision-box" data-wow-delay="0.75s">
                         <!-- Step Box Img start -->
                         <div class="step-img">
                             <figure class="image-anime">
@@ -133,7 +125,57 @@
 
                             <h3>Our Mission</h3>
 
-                            <p>Adipiscing vitae proin sagittis nisl. Mauris commodo quis imperdiet massa tincidunt. Tellus integer feugiat scelerisque varius. Purus sit amet luctus venenatis. Pretium vulputate sapien nec sagittis. Leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim.</p>
+                            <p>Our mission is to consistently add value to our clients by providing high quality services to building a long-term and professional relationship with our clients.</p>
+                        </div>
+                        <!-- Step Box Body end -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <div class="step-box wow fadeInUp vision-box" data-wow-delay="0.50s">
+                        <!-- Step Box Img start -->
+                        <div class="step-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/post-2.jpg' %}" alt="">
+                            </figure>
+                        </div>
+                        <!-- Step Box Img end -->
+
+                        <!-- Step Box Body start -->
+                        <div class="step-body">
+                            <!-- Step Icon start -->
+                            <div class="step-icon">
+                                <img src="{% static 'web/images/loader.svg' %}" alt="">
+                            </div>
+                            <!-- Step Icon end -->
+
+                            <h3>Our Values</h3>
+
+                            <p>IHP Chartered Accountants believes that performance starts with preparation. We conduct exhaustive research and analysis to continuously evaluate the ever changing environment. </p>
+                        </div>
+                        <!-- Step Box Body end -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12">
+                    <div class="step-box wow fadeInUp vision-box" data-wow-delay="0.50s">
+                        <!-- Step Box Img start -->
+                        <div class="step-img">
+                            <figure class="image-anime">
+                                <img src="{% static 'web/images/post-6.jpg' %}" alt="">
+                            </figure>
+                        </div>
+                        <!-- Step Box Img end -->
+
+                        <!-- Step Box Body start -->
+                        <div class="step-body">
+                            <!-- Step Icon start -->
+                            <div class="step-icon">
+                                <img src="{% static 'web/images/Process.svg' %}" alt="">
+                            </div>
+                            <!-- Step Icon end -->
+
+                            <h3>Our Process</h3>
+
+                            <p>Experience brings our work to the level of excellency. The investment process is being tested in every market environment thoroughly.</p>
                         </div>
                         <!-- Step Box Body end -->
                     </div>
@@ -143,321 +185,6 @@
     </div>
     <!-- Our Approach Section End -->
 
-    <!-- Award Winning Section Start-->
-    <div class="award-winning-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Section Title start -->
-                    <div class="section-title text-center">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Award Winning</h3>
-                        <h2 class="text-anime">Something know about our awards winning</h2>
-                    </div>
-                    <!-- Section Title end -->
-                </div>
-            </div>
-
-            <div class="row award-type-section wow fadeInUp" data-wow-delay="0.50s">
-                <!-- Award Type Section Start -->
-                <div class="col-md-8">
-                    <!-- Award Left Column start -->
-                    <div class="award-left-column">
-                        <!-- Award Number start -->
-                        <div class="award-number">
-                            <h3>01.</h3>
-                        </div>
-                        <!-- Award Number end -->
-
-                        <!-- Award Name start -->
-                        <div class="award-name">
-                            <h3>Home Insurance</h3>
-                            <p>Premium Quality Award</p>
-                        </div>
-                        <!-- Award Name end -->
-
-                        <!-- Award Content start -->
-                        <div class="award-content">
-                            <p>This is to certify that Zorvixa's Home Insurance has been recognized for its outstanding service and commitment to providing comprehensive coverage and exceptional support to homeowners.</p>
-                        </div>
-                        <!-- Award Content end -->
-                    </div>
-                    <!-- Award Left Column end -->
-                </div>
-
-                <div class="col-md-4">
-                    <!-- Award Right Column start -->
-                    <div class="award-right-column">
-                        <!-- Award Image start -->
-                        <div class="award-img">
-                            <img src="{% static 'web/images/awards-1.png' %}" alt="">
-                        </div>
-                        <!-- Award Image end -->
-
-                        <!-- Award Year start -->
-                        <div class="award-year">
-                            <h3>2021</h3>
-                        </div>
-                        <!-- Award Year end -->
-                    </div>
-                    <!-- Award Right Column end -->
-                </div>
-                <!-- Award Type Section End -->
-            </div>
-
-            <div class="row award-type-section wow fadeInUp" data-wow-delay="0.75s">
-                <!-- Award Type Section Start -->
-                <div class="col-md-8">
-                    <!-- Award Left Column start -->
-                    <div class="award-left-column">
-                        <!-- Award Number start -->
-                        <div class="award-number">
-                            <h3>02.</h3>
-                        </div>
-                        <!-- Award Number end -->
-
-                        <!-- Award Name start -->
-                        <div class="award-name">
-                            <h3>Health Insurance</h3>
-                            <p>Top Quality Award</p>
-                        </div>
-                        <!-- Award Name end -->
-
-                        <!-- Award Content start -->
-                        <div class="award-content">
-                            <p>This certifies that Zorvixa's Health Insurance has been distinguished for its exceptional quality and dedication to safeguarding the health and well-being of its policyholder</p>
-                        </div>
-                        <!-- Award Content end -->
-                    </div>
-                    <!-- Award Left Column end -->
-                </div>
-
-                <div class="col-md-4">
-                    <!-- Award Right Column start -->
-                    <div class="award-right-column">
-                        <!-- Award Image start -->
-                        <div class="award-img">
-                            <img src="{% static 'web/images/awards-2.png' %}" alt="">
-                        </div>
-                        <!-- Award Image end -->
-
-                        <!-- Award Year start -->
-                        <div class="award-year">
-                            <h3>2022</h3>
-                        </div>
-                        <!-- Award Year end -->
-                    </div>
-                    <!-- Award Right Column end -->
-                </div>
-                <!-- Award Type Section End -->
-            </div>
-
-            <div class="row award-type-section wow fadeInUp" data-wow-delay="1.0s">
-                <!-- Award Type Section Start -->
-                <div class="col-md-8">
-                    <!-- Award Left Column start -->
-                    <div class="award-left-column">
-                        <!-- Award Number start -->
-                        <div class="award-number">
-                            <h3>03.</h3>
-                        </div>
-                        <!-- Award Number end -->
-
-                        <!-- Award Name start -->
-                        <div class="award-name">
-                            <h3>Life Insurance</h3>
-                            <p>Best Agency Award</p>
-                        </div>
-                        <!-- Award Name end -->
-
-                        <!-- Award Content start -->
-                        <div class="award-content">
-                            <p>This certifies that Zorvixa's Life Insurance has been honored for its outstanding dedication to providing financial security and peace of mind to policyholders and their loved ones</p>
-                        </div>
-                        <!-- Award Content end -->
-                    </div>
-                    <!-- Award Left Column end -->
-                </div>
-
-                <div class="col-md-4">
-                    <!-- Award Right Column start -->
-                    <div class="award-right-column">
-                        <!-- Award Image start -->
-                        <div class="award-img">
-                            <img src="{% static 'web/images/awards-3.png' %}" alt="">
-                        </div>
-                        <!-- Award Image end -->
-
-                        <!-- Award Year start -->
-                        <div class="award-year">
-                            <h3>2023</h3>
-                        </div>
-                        <!-- Award Year end -->
-                    </div>
-                    <!-- Award Right Column end -->
-                </div>
-                <!-- Award Type Section End -->
-            </div>
-
-            <div class="row award-type-section wow fadeInUp" data-wow-delay="1.25s">
-                <!-- Award Type Section Start -->
-                <div class="col-md-8">
-                    <!-- Award Left Column start -->
-                    <div class="award-left-column">
-                        <!-- Award Number start -->
-                        <div class="award-number">
-                            <h3>04.</h3>
-                        </div>
-                        <!-- Award Number end -->
-
-                        <!-- Award Name start -->
-                        <div class="award-name">
-                            <h3>Car Insurance</h3>
-                            <p>Best Seller Award</p>
-                        </div>
-                        <!-- Award Name end -->
-
-                        <!-- Award Content start -->
-                        <div class="award-content">
-                            <p>This is to certify that Zorvixa's Car Insurance has been distinguished for its exceptional service and commitment to providing reliable coverage and support to drivers.</p>
-                        </div>
-                        <!-- Award Content end -->
-                    </div>
-                    <!-- Award Left Column end -->
-                </div>
-
-                <div class="col-md-4">
-                    <!-- Award Right Column start -->
-                    <div class="award-right-column">
-                        <!-- Award Image start -->
-                        <div class="award-img">
-                            <img src="{% static 'web/images/awards-4.png' %}" alt="">
-                        </div>
-                        <!-- Award Image end -->
-
-                        <!-- Award Year start -->
-                        <div class="award-year">
-                            <h3>2024</h3>
-                        </div>
-                        <!-- Award Year end -->
-                    </div>
-                    <!-- Award Right Column end -->
-                </div>
-                <!-- Award Type Section End -->
-            </div>
-
-            <div class="row award-type-section wow fadeInUp" data-wow-delay="1.50s">
-                <!-- Award Type Section Start -->
-                <div class="col-md-8">
-                    <!-- Award Left Column start -->
-                    <div class="award-left-column">
-                        <!-- Award Number start -->
-                        <div class="award-number">
-                            <h3>05.</h3>
-                        </div>
-                        <!-- Award Number end -->
-
-                        <!-- Award Name start -->
-                        <div class="award-name">
-                            <h3>Business Insurance</h3>
-                            <p>Best Agency Award</p>
-                        </div>
-                        <!-- Award Name end -->
-
-                        <!-- Award Content start -->
-                        <div class="award-content">
-                            <p>This certifies that Zorvixa's Business Insurance has been recognized for its exceptional service and commitment to providing comprehensive coverage and support to businesses..</p>
-                        </div>
-                        <!-- Award Content end -->
-                    </div>
-                    <!-- Award Left Column end -->
-                </div>
-
-                <div class="col-md-4">
-                    <!-- Award Right Column start -->
-                    <div class="award-right-column">
-                        <!-- Award Image start -->
-                        <div class="award-img">
-                            <img src="{% static 'web/images/awards-3.png' %}" alt="">
-                        </div>
-                        <!-- Award Image end -->
-
-                        <!-- Award Year start -->
-                        <div class="award-year">
-                            <h3>2024</h3>
-                        </div>
-                        <!-- Award Year end -->
-                    </div>
-                    <!-- Award Right Column end -->
-                </div>
-                <!-- Award Type Section End -->
-            </div>
-        </div>
-    </div>
-    <!-- Award Winning Section End-->
-
-    <!-- Counter Section Start -->
-    <div class="counter-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- Counter Box start -->
-                    <div class="counter-box wow fadeInUp" data-wow-delay="0.50s">
-                        <div class="counter-img">
-                            <img src="{% static 'web/images/icon-happy-customers.svg' %}" alt="">
-                        </div>
-                        <div class="counter-body">
-                            <h3><span class="counter">1150</span>+</h3>
-                            <p>Happy Customers</p>
-                        </div>
-                    </div>  
-                    <!-- Counter Box end -->
-                </div>
-                
-                <div class="col-lg-3 col-6">
-                    <!-- Counter Box start -->
-                    <div class="counter-box wow fadeInUp" data-wow-delay="0.75s">
-                        <div class="counter-img">
-                            <img src="{% static 'web/images/icon-insurance-careers.svg' %}" alt="">
-                        </div>
-                        <div class="counter-body">
-                            <h3><span class="counter">150</span>+</h3>
-                            <p>Insurance Careers</p>
-                        </div>
-                    </div>  
-                    <!-- Counter Box end -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Counter Box start -->
-                    <div class="counter-box wow fadeInUp" data-wow-delay="1.0s">
-                        <div class="counter-img">
-                            <img src="{% static 'web/images/icon-awards-won.svg' %}" alt="">
-                        </div>
-                        <div class="counter-body">
-                            <h3><span class="counter">15</span>+</h3>
-                            <p>Awards Won</p>
-                        </div>
-                    </div>  
-                    <!-- Counter Box end -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Counter Box start -->
-                    <div class="counter-box wow fadeInUp" data-wow-delay="1.25s">
-                        <div class="counter-img">
-                            <img src="{% static 'web/images/icon-claims-settled.svg' %}" alt="">
-                        </div>
-                        <div class="counter-body">
-                            <h3><span class="counter">2000</span>+</h3>
-                            <p>Claims Settled</p>
-                        </div>
-                    </div>  
-                    <!-- Counter Box end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Counter Section End -->
 
     <!-- Our Team Section Start -->
     <div class="our-team-section">
@@ -466,106 +193,37 @@
                 <div class="col-md-12">
                     <!-- Section Title start -->
                     <div class="section-title text-center">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Our Team</h3>
-                        <h2 class="text-anime">Meet Our Experienced Team</h2>
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">OUR EXPERTS</h3>
+                        <h2 class="text-anime">Team of Professionals</h2>
                     </div>
                     <!-- Section Title end -->
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-12">
+                {% for team in teams %}
+                <div class="col-lg-3 col-12">
                     <!-- Team Member Item Start -->
                     <div class="team-member-card text-center wow fadeInUp" data-wow-delay="0.50s">
                         <!-- Team Img start -->
                         <div class="team-img">
                             <figure class="image-anime">
-                                <img src="{% static 'web/images/team-1.jpg' %}" alt="">
+                                <img src="{{team.image.url}}" alt="">
                             </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>                               
-                            </div>
                         </div>
                         <!-- Team Img end -->
 
                         <!-- Team Body start -->
                         <div class="team-content">
-                            <h3>Michael Johnson</h3>
-                            <p>founder</p>
+                            <h3>{{team.name}}</h3>
+                            <p>{{team.position}}</p>
                             <div class="divider-separator"></div>
                         </div>
                         <!-- Team Body end -->
                     </div>
                     <!-- Team Member Item End -->
                 </div>
-
-                <div class="col-lg-4 col-12">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-card text-center wow fadeInUp" data-wow-delay="0.75s">
-                        <!-- Team Img start -->
-                        <div class="team-img">
-                            <figure class="image-anime">
-                                <img src="{% static 'web/images/team-2.jpg' %}" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img end -->
-
-                        <!-- Team Body start -->
-                        <div class="team-content">
-                            <h3>Jessica Anderson</h3>
-                            <p>co-founder & CEO</p>
-                            <div class="divider-separator"></div>
-                        </div>
-                        <!-- Team Body end -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
-
-                <div class="col-lg-4 col-12">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-card text-center wow fadeInUp" data-wow-delay="1.0s">
-                        <!-- Team Img start -->
-                        <div class="team-img">
-                            <figure class="image-anime">
-                                <img src="{% static 'web/images/team-3.jpg' %}" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img end -->
-
-                        <!-- Team Body start -->
-                        <div class="team-content">
-                            <h3>Brian Wilson</h3>
-                            <p>Claims Representative</p>
-                            <div class="divider-separator"></div>
-                        </div>
-                        <!-- Team Body end -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

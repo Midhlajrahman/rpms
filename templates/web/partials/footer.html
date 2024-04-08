@@ -1,40 +1,5 @@
 {% load static %}
 <footer class="main-footer">
-    <!-- News Letter Section Start -->
-    <div class="newsletter-section">
-        <div class="container">
-            <div class="row subscribe-newsletter align-items-center">
-                <div class="col-lg-6 col-12">
-                    <!-- News Letter Content Start -->
-                    <div class="newsletter-content">
-                        <h2>Subscribe To Newsletter</h2>
-                        <p>Stay informed with our latest updates! Subscribe to our newsletter to receive exclusive content & special offers.</p>
-                    </div>
-                    <!-- News Letter Content End -->
-                </div>
-
-                <div class="col-lg-6 col-12">
-                    <!-- News Letter Form start -->
-                    <div class="newsletter-form">
-                        <form action="#" method="POST">
-                            <div class="row align-items-center no-gutters">
-                                <div class="form-group col-md-8">
-                                    <input type="email" name ="email" class="form-control" id="newsletter_email" placeholder="Enter Email Address" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-
-                                <div class="col-md-4 text-end">
-                                    <button type="submit" class="btn-default">Subscribe</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- News Letter Form end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- News Letter Section End -->
 
     <!-- Site Branding Start -->
     <div class="site-branding">
@@ -43,7 +8,7 @@
                 <div class="col-md-6">
                     <!-- Site Footer Logo start -->
                     <div class="site-footer-logo">
-                        <img src="images/footer-logo.png" alt="">
+                        <img src="{% static 'web/images/IHPCA-LOGO-White-footer.png' %}" alt="">
                     </div>
                     <!-- Site Footer Logo end -->
                 </div>
@@ -53,7 +18,7 @@
                     <div class="footer-social-link">
                         <ul>
                             <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/islam-hendawy-mohamed-and-partners-chartered-accountants"><i class="fa-brands fa-linkedin-in"></i></a></li>
                             <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                         </ul>
@@ -71,12 +36,11 @@
             <div class="row">
                 <div class="col-12">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Servcies</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Conatct Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'web:about' %}">About Us</a></li>
+                        <li><a href="{% url 'web:service' %}">Services</a></li>
+                        <li><a href="{% url 'web:blog' %}">Blog</a></li>
+                        <li><a href="{% url 'web:contact' %}">Conatct Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -99,7 +63,7 @@
 
                             <div class="content-box-body">
                                 <h3>Customer Support</h3>
-                                <a href="#">+0 123 456 789</a>
+                                <a href="tel:+974 6642 8206">+974 6642 8206</a> <br><a href="tel:+974 5078 8611">+974 5078 8611</a>
                             </div>
                         </div>
                         <!-- Navigation Contact Box end -->
@@ -112,7 +76,7 @@
 
                             <div class="content-box-body">
                                 <h3>Support & Email</h3>
-                                <a href="#">info@companyname.com</a>
+                                <a href="mailto:auditor@ihpca.com">auditor@ihpca.com</a>
                             </div>
                         </div>
                         <!-- Navigation Contact Box end -->
@@ -122,7 +86,7 @@
 
                 <div class="col-lg-5 col-md-12">
                     <!-- Footer Copright Section Start -->
-                    <p>Copyright 2024 <strong>Zorvixa.</strong> All Rights Reserved.</p>
+                    <p class="footer-copyright">&copy; {% now 'Y' %} IHP - Developed by  <a href="https://gedexo.com/" target="__blank">Gedexo Technologies</a></p>
                     <!-- Footer Copright Section End -->
                 </div>
             </div>

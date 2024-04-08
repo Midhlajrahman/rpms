@@ -41,15 +41,8 @@
                             <ul>
                                 {% for post in recentposts %}
                                 <li class="releted-post">
-                                    <div class="feature-img">
-                                        <a href="{{post.get_absolute_url}}">
-                                            <figure class="image-anime">
-                                                <img src="{{post.image.url}}" alt="">
-                                            </figure>
-                                        </a>
-                                    </div>
                                     <div class="feature-title">
-                                        <h2><a href="{{post.get_absolute_url}}">{{blog.title|truncatechars:20|safe}}</a></h2>
+                                        <h2><a href="{{post.get_absolute_url}}">{{blog.title|truncatechars:50|safe}}</a></h2>
                                     </div>
                                 </li>
                                 {% endfor %}
@@ -77,32 +70,6 @@
                             <p>{{blog.content |safe}}</p>
                         </div>
                         <!-- Post Entry End -->
-
-                        <!-- Post Footer Start -->
-                        <div class="post-footer wow fadeInUp" data-wow-delay="0.75s">
-                            <!-- Post Tags Start -->
-                            <div class="post-tags">
-                                <h3>Tags:</h3>
-                                <ul>
-                                    <li><a href="#" class="btn-default">Health</a></li>
-                                    <li><a href="#" class="btn-default">Insurance</a></li>
-                                    <li><a href="#" class="btn-default">Life</a></li>
-                                </ul>
-                            </div>
-                            <!-- Post Tags End --> 
-
-                            <!-- Post Single Social Link start -->
-                            <div class="post-social-sharing">
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- Post Single Social Link start -->
-                        </div>
-                        <!-- Post Footer End -->
                     </div>
                     <!-- Post Content End -->
                 </div>

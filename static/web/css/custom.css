@@ -1,8 +1,4 @@
 /* ----------------------------------------------------------------------------------------
-* Author        : Awaiken
-* Template Name : Zorvixa - Insurance Agency HTML Template
-* File          : CSS File
-* Version       : 1.0
 * ---------------------------------------------------------------------------------------- */
 /* INDEX
 ----------------------------------------------------------------------------------------
@@ -319,7 +315,7 @@ a:focus{
 }
 
 .section-title h2{
-	font-size: 50px;
+	font-size: 35px;
 	font-weight: 900;
 	letter-spacing: 0;
 	color: var(--primary-color);
@@ -444,7 +440,7 @@ header.main-header .header-sticky.active{
 }
 
 header.main-header .header-sticky.active .navbar .navbar-brand  img{
-	max-width: 160px;
+	max-width: 200px;
 }
 
 .navbar .main-menu{
@@ -755,7 +751,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 	position: relative;
 	background: url("../images/home-hero-bg-img.jpg") no-repeat center center;
 	background-size: cover;
-	padding: 200px 0;
+	padding: 120px 0;
 	overflow: hidden;
 }
 
@@ -782,7 +778,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 }
 
 .hero .section-title h1{
-	font-size: 60px;
+	font-size: 50px;
 	color: var(--primary-color);
 }
 
@@ -887,7 +883,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 /************************************/
 
 .about-section{
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .about-video{
@@ -1015,7 +1011,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 /************************************/
 
 .our-service{
-	padding: 100px 0;
+	padding: 50px 0;
 	position: relative;
 }
 
@@ -1028,7 +1024,8 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url("../images/section-color-bg-img.png") no-repeat center center;
+	background: var(--accent-color);
+	/* background: url("../images/section-color-bg-img.png") no-repeat center center; */
 	background-size: cover;
 }
 
@@ -1085,7 +1082,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 	text-align: center;
 	width: 100px;
 	height: 100px;
-	/* background-color: var(--accent-color); */
+	background-color: var(--accent-color);
 	border-radius: 50%;
 	margin-bottom: 20px;
 }
@@ -1096,7 +1093,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 }
 
 .step-body h3{
-	font-size: 22px;
+	font-size: 20px;
 	text-transform: capitalize;
 	margin-bottom: 20px;
 }
@@ -1155,7 +1152,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 /************************************/
 
 .get-consulations{
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .consulations-img img{
@@ -1270,7 +1267,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 /************************************/
 
 .our-team-section{
-	padding: 100px 0 70px;
+	padding: 50px 0 30px;
 }
 
 .our-team-section .section-title h2{
@@ -1569,7 +1566,7 @@ ul.why-choose-list li::before{
 /************************************/
 
 .testimonials{
-	padding: 300px 0 80px;
+	padding: 165px 0 30px;
 	position: relative;
 }
 
@@ -1646,7 +1643,7 @@ ul.why-choose-list li::before{
 /************************************/
 
 .our-articles{
-	padding: 100px 0 70px;
+	padding: 50px 0 70px;
 }
 
 .our-articles .section-title h2{
@@ -1993,7 +1990,7 @@ ul.why-choose-list li::before{
 .site-navigation p{
 	font-size: 16px;
 	color: var(--primary-color);
-	max-width: 200px;
+	/* max-width: 200px; */
 	float: right;
 }
 
@@ -2002,7 +1999,7 @@ ul.why-choose-list li::before{
 /************************************/
 
 .page-header{
-	min-height: 450px;
+	min-height: 200px;
 	display: flex;
 	align-items: center;
 	background: url("../images/subpage-hero-img.jpg") no-repeat center center;
@@ -2189,7 +2186,7 @@ ul.why-choose-list li::before{
 
 .our-approach-section{
 	position: relative;
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .our-approach-section .container{
@@ -3080,7 +3077,7 @@ li.releted-post .feature-title p{
 
 .google-map{
 	padding: 50px 0 0;
-	margin-bottom: -98px;
+	margin-bottom: -20px;
 }
 
 .google-map .google-map-iframe iframe{
@@ -4376,5 +4373,53 @@ li.releted-post .feature-title p{
     }
 }
 .navbar-brand img{
-	height: 25px;
+	height: 50px;
+}
+.testimonial-slider .swiper-slide .testimonial-slide{
+	height: 444px;
+}
+@media only screen and (max-width: 568px){
+	.testimonial-slider .swiper-slide .testimonial-slide{
+		height: 400px;
+	}
+	.navbar-brand img {
+		height: 30px;
+	}
+	.why-choose-us {
+		margin-bottom: 0px;
+	}
+	.testimonials {
+		padding: 50px 0 40px;
+	}
+	.page-header {
+		min-height: 150px;
+	}
+	.google-map {
+		margin-bottom: 0px;
+	}
+	.vision-box {
+		height: 90% !important;
+	}
+	.our-approach-section .step-box {
+		height: 90% !important;
+	}
+}
+.service-icon{
+	background-color: transparent !important;
+	height: 70px !important;
+}
+.vision-box{
+	height: 100% !important;
+}
+.footer-copyright a{
+color: #fff;
+}
+.vision-box .image-anime img{
+	height: 160px;
+}
+.service-box .image-anime img{
+	height: 215px;
+}
+.feature-img .image-anime img{
+	height: 205px;
 }

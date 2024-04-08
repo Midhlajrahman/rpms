@@ -9,7 +9,7 @@
                 <div class="col-lg-6 col-md-8">
                     <!-- Section Title start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Health Insurance</h3>
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Empowering Growth</h3>
                         <h1 class="text-anime">Reduce The Risk of Accounting Limitlessly!</h1>
                     </div>
                     <!-- Section Title end -->
@@ -26,7 +26,7 @@
     </div>
     <!-- Hero Section End -->
 
-    <!-- Home Inforamtion Section Starts -->
+    {% comment %} <!-- Home Inforamtion Section Starts -->
     <div class="home-info-section">
         <div class="container">
             <div class="row">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-    <!-- Home Inforamtion Section End -->
+    <!-- Home Inforamtion Section End --> {% endcomment %}
 
     <!-- About Section Start -->
     <div class="about-section">
@@ -95,7 +95,9 @@
                         <!-- Section Title start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp" data-wow-delay="0.25s">IHP CHARTERED ACCOUNTANTS</h3>
+                            {% comment %} <h2 class="text-anime">Audit, Tax, Accounting & Business Advisory Firm In Doha - Qatar</h2> {% endcomment %}
                             <h2 class="text-anime">Audit, Tax, Accounting & Business Advisory Firm In Doha - Qatar</h2>
+
                         </div>
                         <!-- Section Title end -->
 
@@ -136,7 +138,7 @@
                 {% for service in services %}
                 <!-- Services Step Box Start -->
                 <div class="col-lg-4 col-md-12">
-                    <div class="step-box wow fadeInUp" data-wow-delay="0.50s">
+                    <div class="step-box wow fadeInUp service-box" data-wow-delay="0.50s">
                         <!-- Step Box Img start -->
                         <div class="step-img">
                             <figure class="image-anime">
@@ -148,7 +150,7 @@
                         <!-- Step Box Body start -->
                         <div class="step-body">
                             <!-- Step Icon start -->
-                            <div class="step-icon">
+                            <div class="step-icon service-icon">
                             </div>
                             <!-- Step Icon end -->
 
@@ -166,7 +168,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="service-btn text-center wow fadeInUp" data-wow-delay="0.50s">
-                        <a href="{% url 'web:about' %}" class="btn-default">View All Services</a>
+                        <a href="{% url 'web:service' %}" class="btn-default">View All Services</a>
                     </div>
                 </div>
             </div>
@@ -284,8 +286,8 @@
                 <div class="col-md-12">
                     <!-- Section Title start -->
                     <div class="section-title text-center">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Our Team</h3>
-                        <h2 class="text-anime">Meet Our Experienced Team</h2>
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">OUR EXPERTS</h3>
+                        <h2 class="text-anime">Team of Professionals</h2>
                     </div>
                     <!-- Section Title end -->
                 </div>
@@ -387,140 +389,24 @@
                         <!-- Testimonial Carousel start -->
                         <div class="swiper testimonial-slider">
                             <div class="swiper-wrapper">
+                                {% for testimonial in testimonials %}
                                 <!-- Testimonial Slide start -->
                                 <div class="swiper-slide">
                                     <div class="testimonial-slide">
                                         <div class="testimonial-header">
                                             <figure class="image-anime">
-                                                <img src="{% static 'web/images/author-1.jpg' %}" alt="">
+                                                <img src="{{testimonial.image.url}}" alt="{{testimonial.name}}">
                                             </figure>   
-                                            <h3>Alison Miller</h3>
+                                            <h3>{{testimonial.name}}</h3>
                                         </div>
 
                                         <div class="testimonial-body">
-                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
-                                        </div>
-
-                                        <div class="testimonial-footer">
-                                            <div class="rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
+                                            <p>{{testimonial.description}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Testimonial Slide end -->
-
-                                <!-- Testimonial Slide start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-slide">
-                                        <div class="testimonial-header">
-                                            <figure class="image-anime">
-                                                <img src="{% static 'web/images/author-2.jpg' %}" alt="">
-                                            </figure>
-                                            <h3>Michelle Johnson</h3>
-                                        </div>
-
-                                        <div class="testimonial-body">
-                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
-                                        </div>
-
-                                        <div class="testimonial-footer">
-                                            <div class="rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide end -->
-
-                                <!-- Testimonial Slide start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-slide">
-                                        <div class="testimonial-header">
-                                            <figure class="image-anime">
-                                                <img src="{% static 'web/images/author-3.jpg' %}" alt="">
-                                            </figure>
-                                            <h3>Noah Davis</h3>
-                                        </div>
-
-                                        <div class="testimonial-body">
-                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
-                                        </div>
-
-                                        <div class="testimonial-footer">
-                                            <div class="rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide end -->
-
-                                <!-- Testimonial Slide start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-slide">
-                                        <div class="testimonial-header">
-                                            <figure class="image-anime">
-                                                <img src="{% static 'web/images/author-4.jpg' %}" alt="">
-                                            </figure>
-                                            <h3>Mason Smith</h3>
-                                        </div>
-
-                                        <div class="testimonial-body">
-                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
-                                        </div>
-
-                                        <div class="testimonial-footer">
-                                            <div class="rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide end -->
-
-                                <!-- Testimonial Slide start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-slide">
-                                        <div class="testimonial-header">
-                                            <figure class="image-anime">
-                                                <img src="{% static 'web/images/author-5.jpg' %}" alt="">
-                                            </figure>
-                                            <h3>Lily Tatiana</h3>
-                                        </div>
-
-                                        <div class="testimonial-body">
-                                            <p>Phasellus massa felis, malesuada ac egestas nec, bibendum ut diam. In tellus augue, imperdiet eu porttitor sed, eleifend a felis.</p>
-                                        </div>
-
-                                        <div class="testimonial-footer">
-                                            <div class="rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide end -->
+                                {% endfor %}
                             </div>
 
                             <div class="swiper-pagination"></div>
@@ -540,8 +426,8 @@
                 <div class="col-md-12">
                     <!-- Section Title Start -->
                     <div class="section-title text-center">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Blog & News</h3>
-                        <h2 class="text-anime">Explore Our Newest Articles</h2>
+                        <h3 class="wow fadeInUp" data-wow-delay="0.25s">Blog & Updates</h3>
+                        <h2 class="text-anime">Stay Tuned for Our Updates</h2>
                     </div>
                     <!-- Section Title End -->                    
                 </div>

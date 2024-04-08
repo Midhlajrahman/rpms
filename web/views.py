@@ -70,7 +70,7 @@ def service_details(request, slug):
 
 
 def blog(request):
-    blogs =Blog.objects.all()
+    blogs =Blog.objects.all().order_by('-date')
     context = {"is_blog": True,"blogs": blogs,}
     return render(request, "web/blog.html", context)
 
@@ -80,11 +80,6 @@ def blog_details(request,slug):
     recentposts = Blog.objects.exclude(slug=slug)
     context = {"is_blog": True,"blog": blog,"recentposts": recentposts}
     return render(request, "web/blog-single.html", context)
-
-def team(request,slug):
-    team = Team.objects.get(slug=slug)
-    context = {"is_about": True,"team": team,}
-    return render(request, "web/team.html", context)
 
 
 def contact(request):

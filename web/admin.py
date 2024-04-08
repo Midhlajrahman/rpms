@@ -27,7 +27,6 @@ class ServiceEnquiryAdmin(admin.ModelAdmin):
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ('name','position',)
-    prepopulated_fields = {'slug':('name',)}
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
@@ -36,7 +35,7 @@ class BlogAdmin(admin.ModelAdmin):
 
 @admin.register(Testimonials)
 class TestimonialsAdmin(admin.ModelAdmin):
-    list_display = ('name','position',)
+    list_display = ('name',)
 
 
 @admin.register(Contact)

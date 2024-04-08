@@ -56,6 +56,7 @@ class ServiceFaq(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True, max_length=100, blank=True)
+    date = models.DateField(blank=True, null=True)
     image = models.ImageField(upload_to="blog-images/",)
     content = HTMLField()
 
@@ -63,7 +64,7 @@ class Blog(models.Model):
         return reverse_lazy("web:blog_details", kwargs={"slug": self.slug})
 
     class Meta:
-        ordering = ("id",)
+        ordering = ("date",)
         verbose_name = 'Blog'
         verbose_name_plural = 'Blogs'
 
@@ -74,9 +75,7 @@ class Blog(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=150)
     position = models.CharField(max_length=150,blank=True,null=True)
-    slug = models.SlugField(unique=True, max_length=100, blank=True)
     image = models.ImageField(blank=True,null=True, upload_to="team-images",)
-    description = HTMLField(blank=True,null=True)
 
     class Meta:
         verbose_name = 'Team'
@@ -88,7 +87,6 @@ class Team(models.Model):
 
 class Testimonials(models.Model):
     name = models.CharField(max_length=150)
-    position = models.CharField(max_length=150,blank=True,null=True)
     image = models.ImageField(blank=True,null=True, upload_to="testimonial-images",)
     description = models.TextField(blank=True,null=True)
 
