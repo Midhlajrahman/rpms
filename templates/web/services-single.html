@@ -11,7 +11,7 @@
                     <div class="page-header-box">
                         <h1 class="text-anime">Services Details</h1>
                         <nav>
-							<ol class="breadcrumb wow fadeInUp" data-wow-delay="0.50s">
+							<ol class="breadcrumb  "  >
 								<li class="breadcrumb-item"><a href="{% url 'web:index' %}">Home</a></li>
 								<li class="breadcrumb-item"><a href="{% url 'web:service' %}">Services</a></li>
 								<li class="breadcrumb-item active">Services Details</li>
@@ -32,7 +32,7 @@
                 <!-- Sidebar Section Start -->
                 <div class="col-lg-4 col-md-12 order-lg-1 order-2">  
                     <div class="services-single-sidebar">
-                        <div class="services-single-service wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="services-single-service  "  >
                             <h3>Our Services</h3>
                             <ul>
                                 {% for item in other_services %}
@@ -40,9 +40,9 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        <div class="service-single-contact wow fadeInUp" data-wow-delay="0.65s">
+                        <div class="service-single-contact  " data-wow-delay="0.65s">
                             <h3>Contact Info</h3>
-                            <div class="contact-form wow fadeInUp" data-wow-delay="0.75s">
+                            <div class="contact-form  " data-wow-delay="0.75s">
                                 <form  action="#" method="POST">
                                     {% csrf_token %}
                                     <div class="row">
@@ -80,7 +80,7 @@
                 <!-- Services Content Start -->
                 <div class="col-lg-8 col-md-12 order-lg-2 order-1">
                     <div class="service-single-content">
-                        <div class="service-single-img wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="service-single-img  "  >
                             <figure class="image-anime">
                                 <img src="{{service.service_image.url}}" alt="">
                             </figure>
@@ -94,7 +94,7 @@
                         </div>
 
                         <!-- FAQs Section Start -->
-                        <div class="service-single-faq wow fadeInUp" data-wow-delay="0.50s">
+                        <div class="service-single-faq  "  >
                             
                             <!-- FAQs Section Start -->
                             <div class="faq-accordion" id="accordion">
