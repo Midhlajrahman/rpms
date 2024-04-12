@@ -924,6 +924,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 
 .about-body p{
 	margin-bottom: 30px;
+	text-align: justify;
 }
 
 .about-icon-box{
@@ -1101,6 +1102,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 .step-body p{
 	font-size: 16px;
 	margin-bottom: 20px;
+	text-align: justify;
 }
 
 .step-body .btn-read-more,
@@ -1175,6 +1177,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 	font-size: 16px;
 	color: var(--text-color);
 	margin-bottom: 30px;
+	text-align: justify;
 }
 
 .consulations-content .list-icon ul{
@@ -1432,6 +1435,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 	font-size: 16px;
 	font-weight: 400;
 	color: var(--primary-color);	
+	text-align: justify;
 }
 
 .why-choose-body ul.why-choose-list{
@@ -1733,6 +1737,7 @@ ul.why-choose-list li::before{
 .post-content .post-header p{
 	font-size: 16px;
 	margin-bottom: 20px;
+	text-align: justify;
 }
 
 /************************************/
@@ -2529,6 +2534,7 @@ ul.why-choose-list li::before{
 .service-single-body p{
 	font-size: 16px;
 	margin-bottom: 20px;
+	text-align: justify;
 }
 
 .service-single-body ul,
@@ -2627,6 +2633,7 @@ ul.why-choose-list li::before{
 
 .faq-accordion .accordion-item .accordion-collapse .accordion-body{
 	padding: 25px 50px 0 22px;
+	text-align: justify;
 }
 
 .accordion-body p{
@@ -2865,6 +2872,7 @@ li.releted-post .feature-title p{
 .post-entry p{
 	font-size: 16px;
 	margin-bottom: 30px;
+	text-align: justify;
 }
 
 .post-entry blockquote{
@@ -3022,6 +3030,7 @@ li.releted-post .feature-title p{
 
 .get-in-touch-body p{
 	padding-right: 80px;
+	text-align: justify;
 }
 
 .contact-form{
@@ -4435,3 +4444,101 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.address{
+	text-align: justify;
+}
+   /* whatsapp */
+
+   .whats-float {
+    position: fixed;
+    transform:translate(108px,0px);
+    bottom: 300px;
+    right:0;
+    width:150px;
+    overflow: hidden;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 2px 0 0 2px;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+    vertical-align: middle;
+    opacity: 0.8;
+
+}
+.whats-float a span {
+    color: white;
+    font-size: 15px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    position: absolute;
+    line-height: 16px;
+    font-weight: bolder;
+}
+
+.whats-float i {
+    font-size: 30px;
+    color: white;
+    line-height: 30px;
+    padding: 10px;
+    transform:rotate(0deg);
+    transition: all 0.5s ease-in-out;
+    text-align:center;
+
+}
+
+.whats-float:hover {
+    color: #FFFFFF;
+    transform:translate(0px,0px);
+    opacity: 1;
+}
+
+.whats-float:hover i  {
+    transform:rotate(360deg);
+}
+
+/* call */
+.call-float {
+    position: fixed;
+    transform:translate(108px,0px);
+    bottom: 245px;
+    right:0;
+    width:150px;
+    overflow: hidden;
+    background-color: #2b25d3;
+    color: #FFF;
+    border-radius: 2px 0 0 2px;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+    vertical-align: middle;
+    opacity: 0.8;
+}
+.call-float a span {
+    color: white;
+    font-size: 15px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    position: absolute;
+    line-height: 16px;
+    font-weight: bolder;
+}
+
+.call-float i {
+    font-size: 25px;
+    color: white;
+    line-height: 30px;
+    padding: 10px;
+    transform:rotate(0deg);
+    transition: all 0.5s ease-in-out;
+    text-align:center;
+
+}
+
+.call-float:hover {
+    color: #FFFFFF;
+    transform:translate(0px,0px);
+    opacity: 1;
+}
+
+.call-float:hover i  {
+    transform:rotate(360deg);}
+

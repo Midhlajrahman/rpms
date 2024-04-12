@@ -42,7 +42,7 @@ class ServiceEnquiry(models.Model):
 class ServiceFaq(models.Model):
     service = models.ForeignKey("web.Service", on_delete=models.CASCADE, blank=True, null=True)
     question = models.CharField(max_length=255)
-    answer = models.TextField()
+    answer = HTMLField(blank=True,null=True)
 
     class Meta:
         ordering = ("id",)

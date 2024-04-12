@@ -48,7 +48,7 @@ def service_details(request, slug):
             )
 
             whatsapp_api_url = "https://api.whatsapp.com/send"
-            phone_number = "+97466428206"
+            phone_number = "+97450788611"
             encoded_message = urllib.parse.quote(message)
             whatsapp_url = f"{whatsapp_api_url}?phone={phone_number}&text={encoded_message}"
 
@@ -100,7 +100,7 @@ def contact(request):
             )
 
             whatsapp_api_url = "https://api.whatsapp.com/send"
-            phone_number = "+97466428206"
+            phone_number = "+97450788611"
             encoded_message = urllib.parse.quote(message)
             whatsapp_url = f"{whatsapp_api_url}?phone={phone_number}&text={encoded_message}"
 
