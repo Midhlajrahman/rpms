@@ -1293,13 +1293,13 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 }
 
 .team-member-card .team-img figure{
-	border-radius: 10px;
+	border-radius: 14px;
 }	
 
 .team-member-card .team-img figure img{
 	width: 100%;
 	transition: var(--transition);
-	height: 200px;
+	
     object-fit: scale-down;
 }
 

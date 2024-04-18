@@ -76,10 +76,13 @@ class Team(models.Model):
     name = models.CharField(max_length=150)
     position = models.CharField(max_length=150,blank=True,null=True)
     image = models.ImageField(blank=True,null=True, upload_to="team-images",)
+    order = models.PositiveIntegerField(default=0)
+
 
     class Meta:
         verbose_name = 'Team'
         verbose_name_plural = 'Teams'
+        ordering = ['order']  
 
     def __str__(self):
         return str(self.name)
