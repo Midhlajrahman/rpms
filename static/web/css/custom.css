@@ -1302,6 +1302,13 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 	
     object-fit: scale-down;
 }
+@media screen and (max-width: 768px) {
+    .team-member-card .team-img figure img {
+        width: 80%; /* Adjust as needed */
+        transition: var(--transition);
+        object-fit: scale-down;
+    }
+}
 
 .team-img .our-team-social-icon{
 	position: absolute;
