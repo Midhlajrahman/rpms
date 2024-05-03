@@ -747,9 +747,9 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 /*** 	     04. Hero css		  ***/
 /************************************/
 
-.hero{
+.hero{    
 	position: relative;
-	background: url("../images/home-hero-bg-img.jpg") no-repeat center center;
+	background: url("../images/medium-shot-woman-working-laptop (1).jpg") no-repeat center center;
 	background-size: cover;
 	padding: 120px 0;
 	overflow: hidden;
