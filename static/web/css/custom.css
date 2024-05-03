@@ -1361,11 +1361,11 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 
 .our-team-social-icon ul li a i:hover{
 	background: var(--primary-color);
-	color: var(--accent-color);
+	color: var(--accent-color);https://www.amazon.in/LOQZ-Smart-Lock-Plus-Door/dp/B0BBQXKSG2
 }
 
 .team-content{
-	padding: 30px;
+	padding: 10px;
 }
 
 .team-content h3{
@@ -1374,18 +1374,19 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 }
 
 .team-content p{
-	font-size: 16px;
-	margin-bottom: 10px;
+	font-size: 80px;
+	margin-bottom: 4px;
 	text-transform: capitalize;
 }	
 
-.team-content .divider-separator{
-	background: var(--accent-color);
-    width: 44px;
+.team-content .divider-separator {
+    background: var(--accent-color);
+    width:100% !important;
     height: 4px;
     text-align: center;
     margin: 0 auto;
 }
+
 
 /************************************/
 /***    11. Why Choose Us css     ***/
