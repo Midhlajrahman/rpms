@@ -201,29 +201,29 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row text-center" >
                 {% for team in teams %}
-                <div class="col-lg-3 col-12">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-card text-center  "  >
-                        <!-- Team Img start -->
-                        <div class="team-img">
-                            <figure class="image-anime">
-                                <img src="{{team.image.url}}" alt="">
-                            </figure>
+                    <div class="col-lg-2 col-12 mx-2" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border-radius: 5px; margin-bottom: 20px;">
+                        <!-- Team Member Item Start -->
+                        <div class="team-member-card text-center" style="margin: 10px;"> <!-- Adjust the value as needed -->
+                            <!-- Team Img start -->
+                            <div class="team-img">
+                                <figure class="image-anime">
+                                    <img src="{{team.image.url}}" alt="">
+                                </figure>
+                            </div>
+                            <!-- Team Img end -->
+            
+                            <!-- Team Body start -->
+                            <div class="team-content">
+                                <h3 style="font-size: 12px;">{{team.name}}</h3>
+                                <p style="font-size: 12px;">{{team.position}}</p>
+                                <div class="divider-separator"></div>
+                            </div>
+                            <!-- Team Body end -->
                         </div>
-                        <!-- Team Img end -->
-
-                        <!-- Team Body start -->
-                        <div class="team-content">
-                            <h3>{{team.name}}</h3>
-                            <p>{{team.position}}</p>
-                            <div class="divider-separator"></div>
-                        </div>
-                        <!-- Team Body end -->
+                        <!-- Team Member Item End -->
                     </div>
-                    <!-- Team Member Item End -->
-                </div>
                 {% endfor %}
             </div>
         </div>

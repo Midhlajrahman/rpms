@@ -1422,7 +1422,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 }
 
 .team-content p{
-	font-size: 80px;
+	font-size: 10px;
 	margin-bottom: 4px;
 	text-transform: capitalize;
 }	
@@ -1434,6 +1434,10 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
     text-align: center;
     margin: 0 auto;
 }
+.team-img img {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increased box shadow values */
+	border-radius: 5px; /* Optional: adds rounded corners */
+    }
 
 
 /************************************/
@@ -4597,5 +4601,11 @@ input[type=number] {
 
 .call-float:hover i  {
     transform:rotate(360deg);}
+.w-100
+{
+	width: 100% !important;
+    height: 100% !important;
+}
 
+	
 	
