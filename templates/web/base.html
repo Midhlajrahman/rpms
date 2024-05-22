@@ -58,6 +58,9 @@
     <!-- Main custom css -->
     <link href="{% static 'web/css/custom.css' %}?v=1.1" rel="stylesheet" media="screen">
 
+    <link rel="stylesheet" href="{% static 'web/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/owl.theme.default.min.css' %}">
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.3/dist/sweetalert2.all.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,6 +78,7 @@
 
 
 {% include "web/partials/footer.html" %}
+
   <!-- Jquery Library File -->
   <script src="{% static 'web/js/jquery-3.7.1.min.js' %}"></script>
   <!-- Bootstrap js file -->
@@ -102,11 +106,16 @@
   <script src="{% static 'web/js/ScrollTrigger.min.js' %}"></script>
   <!-- Wow js file -->
   <script src="{% static 'web/js/wow.js' %}"></script>
+
+ 
   <!-- Main Custom js file -->
   <script src="{% static 'web/js/function.js' %}"></script>
 
   <script src="{% static 'web/js/ajax.js' %}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="{% static 'web/js/owl.carousel.min.js' %}"></script>
+
+  <script src="{% static 'web/js/custom.js' %}"></script>
+
   
 
 

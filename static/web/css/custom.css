@@ -1409,7 +1409,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 
 .our-team-social-icon ul li a i:hover{
 	background: var(--primary-color);
-	color: var(--accent-color);https://www.amazon.in/LOQZ-Smart-Lock-Plus-Door/dp/B0BBQXKSG2
+	color: var(--accent-color);
 }
 
 .team-content{
@@ -4608,4 +4608,278 @@ input[type=number] {
 }
 
 	
-	
+
+
+
+
+
+.hero-slider-item {
+    height: 650px;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+}
+
+.hero-slider-item::before {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+    left: 0;
+    top: 0;
+}
+
+/* .item-bg-1 {
+    background-image: url("../img/slider/1.jpg");
+}
+.item-bg-2 {
+    background-image: url("../img/slider/2.jpg");
+}
+.item-bg-3 {
+    background-image: url("../img/slider/3.jpg");
+} */
+.hero-slider-text {
+    padding: 0 15px;
+    max-width: 1140px;
+    margin: auto;
+    position: relative;
+}
+
+.welcome-text {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.hst-text-center {
+    text-align: center;
+}
+
+.hst-text-center p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.hero-slider-text h1 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.hero-slider-text p {
+    color: #fff;
+    font-size: 16px;
+    margin: 30px 0 40px;
+    max-width: 585px;
+}
+
+.hero-slider .owl-item.active h1,
+.hero-slider2 .owl-item.active h1 {
+    animation: 1s .2s fadeInUp both;
+}
+
+.hero-slider .owl-item.active p,
+.hero-slider2 .owl-item.active p {
+    animation: 1s .6s fadeInUp both;
+}
+
+.hero-slider .owl-item.active .slider-btn,
+.hero-slider2 .owl-item.active .slider-btn {
+    animation: 1s .9s flipInX both;
+}
+
+.owl-theme-1 button.owl-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background-color: rgb(255, 255, 255, .7) !important;
+    font-size: 40px !important;
+    height: 80px;
+    line-height: 40px !important;
+    width: 50px;
+    border-radius: 0 100px 100px 0 !important;
+    margin-top: -70px !important;
+    margin-left: 0px !important;
+    transition: .3s;
+    -webkit-transition: .3s;
+}
+
+.owl-theme-1 button.owl-prev i {
+    padding-right: 5px;
+}
+
+.owl-theme-1 button.owl-prev:hover,
+.owl-theme-1 button.owl-next:hover {
+    background-color: #3DB166 !important;
+    color: #fff;
+}
+
+.owl-theme-1 button.owl-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background-color: rgb(255, 255, 255, .7) !important;
+    font-size: 40px !important;
+    height: 80px;
+    line-height: 40px !important;
+    width: 50px;
+    border-radius: 100px 0 0 100px !important;
+    margin-top: -70px !important;
+    margin-right: 0px !important;
+    transition: .3s;
+    -webkit-transition: .3s;
+}
+
+.owl-theme-1 button.owl-next i {
+    padding-left: 5px;
+}
+
+.owl-theme-1 .owl-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+
+.owl-theme-1 .owl-dots .owl-dot span {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    background-color: rgb(255, 255, 255, .7);
+    border-radius: 0 !important;
+    -moz-transition: .4s;
+    -webkit-transition: .4s;
+    transition: .4s;
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.owl-theme-1 .owl-dots .owl-dot.active span,
+.owl-theme-1 .owl-dots .owl-dot:hover span {
+    background: #3DB166;
+}
+
+/* Owl Theme Style Two */
+.owl-theme-2 .owl-nav {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.owl-theme-2 .owl-prev {
+    margin: 0 -9px 0 0px !important;
+    padding: 0 !important;
+}
+
+.owl-theme-2 .owl-prev i {
+    background-color: #f2eee2;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    color: #464e4e;
+    line-height: 40px;
+    font-size: 30px !important;
+}
+
+.owl-theme-2 .owl-prev:hover {
+    -webkit-clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.owl-theme-2 .owl-next {
+    margin: 0 0px 0 -9px !important;
+    padding: 0 !important;
+}
+
+.owl-theme-2 .owl-next i {
+    background-color: #3DB166;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    color: #fff;
+    line-height: 40px;
+    font-size: 30px !important;
+}
+
+.owl-theme-2 .owl-next:hover {
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.owl-theme-2 .owl-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.owl-theme-2 .owl-dot span {
+    width: 25px !important;
+    height: 25px !important;
+    margin: 0 4px !important;
+    background: #f2eee2 !important;
+    border-radius: 0 !important;
+    -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+}
+
+.owl-theme-2 .owl-dots .owl-dot.active span,
+.owl-theme-2 .owl-dots .owl-dot:hover span {
+    background: #3DB166 !important;
+}
+
+/* End owl Theme Style Two */
+
+
+.hero-area {
+    background-image: url(../img/hero-area-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    height: 650px;
+}
+
+.hero-area:before {
+    background-color: rgba(0, 0, 0, .6);
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.hero-textarea {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 48px;
+    margin: 0;
+    position: relative;
+}
+
+
+@media screen and (max-width:787px) {
+	.carousel-item{
+		height: 60vh !important;
+	}
+	.section-title .text-anime{
+		font-size: 30px !important;
+	}
+	.slider-img{
+		object-fit: cover;
+	}
+
+}
+

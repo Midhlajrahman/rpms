@@ -78,6 +78,7 @@ DATABASES = {
         "HOST": config("DB_HOST", default="localhost"),
         "PORT": "5432",
         'OPTIONS': {},
+       
     }
 }
 

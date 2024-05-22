@@ -5,7 +5,7 @@ from .models import Blog
 from .models import Testimonials
 from .models import Contact
 from .models import ServiceEnquiry
-from .models import ServiceFaq
+from .models import ServiceFaq,Banner
 
 # Register your models here.
 
@@ -41,3 +41,9 @@ class TestimonialsAdmin(admin.ModelAdmin):
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('name','email',)
+
+
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ("title","is_active",)
+    search_fields = ("title",)
