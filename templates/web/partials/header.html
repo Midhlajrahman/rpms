@@ -61,9 +61,9 @@
                                  Services
                                 </a>
                                 <ul class="dropdown-menu bg-light text-dark drop-sm" style="width:auto;">
-                                    {% for service in services %}
+                                    {% for service in service_banner %}
                                   <li class=''><a class="dropdown-item ms-2"; href="{% url "web:service_details" service.slug %}">{{service.service_name}}</a></li>
-                             <br>
+                    
                                   {% endfor %}
                                 </ul>
                             </li> 

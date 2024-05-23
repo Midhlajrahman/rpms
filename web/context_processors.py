@@ -1,9 +1,9 @@
 from .models import Service
 
 def main_context(request):
-    service = Service.objects.all()
+    service_banner = Service.objects.all()
 
     context = {
-        "services": service,
+        "service_banner": service_banner,
     }
     return context

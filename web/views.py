@@ -9,11 +9,12 @@ from .forms import ServiceEnquiryForm
 
 def index(request):
     services =Service.objects.all()[:3]
+    
     blogs =Blog.objects.all().order_by('-date')
     testimonials =Testimonials.objects.all()
     teams = Team.objects.all()
     banners = Banner.objects.filter(is_active=True)
-    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners,}
+    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, }
     return render(request, "web/index.html", context)
 
 def about(request):
