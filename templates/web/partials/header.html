@@ -41,7 +41,7 @@
     <!-- Topbar Section End -->
 
     <!-- Header Start -->
-	<header class="main-header" id="hero-section">
+    <header class="main-header" id="hero-section">
 		<div class="header-sticky">
 			<nav class="navbar navbar-expand-lg">
 				<div class="container">
@@ -50,13 +50,24 @@
 						<img src="{% static 'web/images/cropped-IHPCA-LOGO.png' %}" alt="Logo">
 					</a>
 					<!-- Logo End -->
-	
+                  
 					<!-- Main Menu start -->
 					<div class="collapse navbar-collapse main-menu">
-						<ul class="navbar-nav mr-auto" id="menu">
+						<ul class="navbar-nav" id="menu">
 							<li class="nav-item first-menu"><a class="nav-link" href="/">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="{% url 'web:about' %}">About us</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'web:service' %}">Services</a></li>
+                             <li class="nav-item dropdown" >
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                 Services
+                                </a>
+                                <ul class="dropdown-menu bg-light text-dark drop-sm" style="width:auto;">
+                                    {% for service in services %}
+                                  <li class=''><a class="dropdown-item ms-2"; href="{% url "web:service_details" service.slug %}">{{service.service_name}}</a></li>
+                             <br>
+                                  {% endfor %}
+                                </ul>
+                            </li> 
+                         
 							<li class="nav-item"><a class="nav-link" href="{% url 'web:blog' %}">Blog</a></li>
                           
 							<li class="nav-item highlighted-menu"><a class="nav-link" href="{% url 'web:contact' %}">Contact Us</a></li>
@@ -71,6 +82,7 @@
 		</div>
 	</header>
 	<!-- Header End -->
+    <!-- End navbar -->
 
 
 	<div class="whats-float">

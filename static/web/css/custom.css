@@ -455,6 +455,7 @@ header.main-header .header-sticky.active .navbar .navbar-brand  img{
 	margin: 0 26px;
 	padding: 40px 0;
 	position: relative;
+	/* line-height: 15px; */
 }
 
 header.main-header .header-sticky.active .navbar .main-menu ul li:not(.highlighted-menu){
@@ -1319,6 +1320,13 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 
 .our-team-section{
 	padding: 50px 0 30px;
+	margin-left: 150px;
+}
+
+@media screen and (max-width: 768px) {
+	.our-team-section{
+		margin-left: 0px;
+	}
 }
 
 .our-team-section .section-title h2{
@@ -1435,11 +1443,17 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
     margin: 0 auto;
 }
 .team-img img {
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increased box shadow values */
-	border-radius: 5px; /* Optional: adds rounded corners */
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+	border-radius: 5px; 
     }
+ 
+@media screen and (max-width: 768px) {
 
-
+	.team-img img {
+		box-shadow: None;
+		border-radius: 5px; 
+		}
+}
 /************************************/
 /***    11. Why Choose Us css     ***/
 /************************************/
@@ -4883,3 +4897,17 @@ input[type=number] {
 
 }
 
+
+
+@media screen and (max-width:576px){
+	.shadow-small{
+		-webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+	}
+
+	.nav-item .drop-sm{
+		background-color:#5548B0 !important;
+
+	}
+	}
