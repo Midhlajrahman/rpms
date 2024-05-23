@@ -1322,6 +1322,7 @@ header.main-header .header-sticky.active .navbar .main-menu ul li.has-submenu ul
 .our-team-section{
 	padding: 50px 0 30px;
 	margin-left: 100px;
+	overflow-x: hidden;
 }
 .our-team-section-index{
 	margin-left: 0px;
