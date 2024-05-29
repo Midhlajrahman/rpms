@@ -4924,6 +4924,9 @@ input[type=number] {
 
 	}
 	
+	}.dropdown:active .dropdown-menu{
+		display: block;
+		margin-top: 0;
 	}
 
 @media screen and (max-width:992px){
@@ -4931,4 +4934,20 @@ input[type=number] {
 		background-color:#5548B0 !important;
 
 	}
+}
+
+/* hover on dropdown */
+.dropdown:hover .dropdown-menu{
+	display: block;
+	margin-top: 0;
+}
+.dropdown-item{
+	/* box-shadow: 0px 0px 20px 0px #00000008; */
+/* background-color:#D8D7D7; */
+width: auto;
+	
+}
+
+.dropdown-item:hover{
+	background-color:#D8D7D7; 
 }
