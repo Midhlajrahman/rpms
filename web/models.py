@@ -131,3 +131,28 @@ class Banner(models.Model):
         ordering = ('-id',) 
         verbose_name = ('Banner')
         verbose_name_plural = ('Banners')
+
+
+class Meta(models.Model):
+    PAGES = (
+        ('home', "Home"),
+        ('about', "About"),
+        ('service', "Service"),
+        ('blog', "Blog"),
+        ('contact_us', "Contact Us"),
+        
+    )
+    page = models.CharField(max_length=20, choices=PAGES,)
+    title = models.CharField(max_length=60)
+    meta_title = models.CharField(max_length=60)
+    meta_description = models.CharField(max_length=180)
+    url = models.URLField(blank=True,null=True)
+    image = models.ImageField(upload_to="meta_image/")
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "Meta" 
+        verbose_name_plural = "Metas"
+    
+    def __str__(self):
+        return self.title

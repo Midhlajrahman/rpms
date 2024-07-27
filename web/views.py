@@ -3,29 +3,32 @@ from django.shortcuts import render,redirect
 from .models import Team
 from .models import Service, ServiceFaq
 from .models import Blog,Banner
-from .models import Testimonials
+from .models import Testimonials, Meta
 from .forms import ContactForm
 from .forms import ServiceEnquiryForm
 
+
 def index(request):
+    meta = Meta.objects.filter(page="home").first()
     services =Service.objects.all()[:3]
-    
     blogs =Blog.objects.all().order_by('-date')
     testimonials =Testimonials.objects.all()
     teams = Team.objects.all()
     banners = Banner.objects.filter(is_active=True)
-    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, }
+    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, "meta":meta }
     return render(request, "web/index.html", context)
 
 def about(request):
+    meta = Meta.objects.filter(page="about").first()
     teams = Team.objects.all()
-    context = {"is_about": True, "teams": teams}
+    context = {"is_about": True, "teams": teams, "meta":meta}
     return render(request, "web/about.html", context)
 
 
 def service(request):
+    meta = Meta.objects.filter(page="service").first()
     services =Service.objects.all()
-    context = {"is_service": True,"services": services }
+    context = {"is_service": True,"services": services, "meta":meta}
     return render(request, "web/service.html", context)
 
 
@@ -72,8 +75,9 @@ def service_details(request, slug):
 
 
 def blog(request):
+    meta = Meta.objects.filter(page="blog").first()
     blogs =Blog.objects.all().order_by('-date')
-    context = {"is_blog": True,"blogs": blogs,}
+    context = {"is_blog": True,"blogs": blogs, "meta":meta}
     return render(request, "web/blog.html", context)
 
 
@@ -85,6 +89,7 @@ def blog_details(request,slug):
 
 
 def contact(request):
+    meta = Meta.objects.filter(page="contact_us").first()
     form = ContactForm(request.POST or None)
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -111,7 +116,7 @@ def contact(request):
     else:
         form = ContactForm()
 
-    context ={"is_contact": True, "form": form}
+    context ={"is_contact": True, "form": form, "meta":meta}
     return render(request, "web/contact.html", context)
 
 
