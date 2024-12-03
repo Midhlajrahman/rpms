@@ -1,88 +1,49 @@
 {% load static %}
 
 
-<body class="tt-magic-cursor">
+<body>
 
-    
- <!-- Google Tag Manager (noscript) -->
- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD9GZC2Z"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-
-
-	<!-- Magic Cursor Start -->
-	<div id="magic-cursor">
-		<div id="ball"></div>
+    <!-- Preloader Start -->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="{% static 'web/images/loader.svg' %}" alt=""></div>
+		</div>
 	</div>
-	<!-- Magic Cursor End -->
-
-    <!-- Topbar Section Start -->    
-    <div class="header-link-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <!-- Topbar Contact Info Start -->
-                    <div class="header-contact-info">
-                        <ul>
-                            <li><a href="tel:+974 6642 8206"><i class="fa-solid fa-phone"></i>+974 6642 8206</a></li>
-                            <li><a href="#"><i class="fa-solid fa-envelope"></i>auditor@ihpca.com</a></li>
-                        </ul>
-                    </div>
-                    <!-- Topbar Contact Info End -->
-                </div>
-                <div class="col-md-6">
-                    <!-- Header Social Links Start -->
-                    <div class="header-social-link">
-                        <ul>
-                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/company/islam-hendawy-mohamed-and-partners-chartered-accountants"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- Header Social Links End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar Section End -->
+	<!-- Preloader End -->
 
     <!-- Header Start -->
-    <header class="main-header" id="hero-section">
+	<header class="main-header">
 		<div class="header-sticky">
 			<nav class="navbar navbar-expand-lg">
-				<div class="container">
+				<div class="container-fluid">
 					<!-- Logo Start -->
-					<a class="navbar-brand" href="{% url 'web:index' %}">
-						<img src="{% static 'web/images/cropped-IHPCA-LOGO.png' %}" alt="Logo">
+					<a class="navbar-brand" href="index.html">
+						<img src="{% static 'web/images/logo.svg' %}" alt="Logo">
 					</a>
 					<!-- Logo End -->
-                  
-					<!-- Main Menu start -->
+
+					<!-- Main Menu Start -->
 					<div class="collapse navbar-collapse main-menu">
-						<ul class="navbar-nav" id="menu">
-							<li class="nav-item first-menu"><a class="nav-link" href="/">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'web:about' %}">About us</a></li>
-                             <li class="nav-item dropdown" >
-                                <a class="nav-link dropdown-toggle" href="{% url 'web:service' %}"  data-bs-toggle="" aria-expanded="false">
-                                 Services
-                                </a>
-                                <ul class="dropdown-menu bg-light text-dark drop-sm" style="width:auto;">
-                                    {% for service in service_banner %}
-                                  <li class='mt-3 mb-3'><a class="dropdown-item ms-2"; href="{% url "web:service_details" service.slug %}">{{service.service_name}}</a></li>
-                                   {% comment %} <br> {% endcomment %}
-                                  {% endfor %}
-                                </ul>
-                            </li> 
-                         
-							<li class="nav-item"><a class="nav-link" href="{% url 'web:blog' %}">Blog</a></li>
-                          
-							<li class="nav-item highlighted-menu"><a class="nav-link" href="{% url 'web:contact' %}">Contact Us</a></li>
-						</ul>
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item "><a class="nav-link" href="{% url "web:index" %}">Home</a>
+                                </li>                                
+                                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>                             
+                            </ul>
+                        </div>
+                        <!-- Header Btn Start -->
+                        <div class="header-btn d-inline-flex">
+                            <a href="tel:+789859664" class="btn-phone"><i class="fa-solid fa-phone-volume"></i>+01 789 859 664</a>
+                            <a href="contact.html" class="btn-default">get in touch</a>
+                        </div>
+                        <!-- Header Btn End -->
 					</div>
 					<!-- Main Menu End -->
-	
 					<div class="navbar-toggle"></div>
 				</div>
 			</nav>
@@ -90,19 +51,3 @@
 		</div>
 	</header>
 	<!-- Header End -->
-    <!-- End navbar -->
-
-
-	<div class="whats-float">
-        <a href="https://wa.me/+97450788611"
-           target="_blank">
-            <i class="fa-brands fa-whatsapp"></i><span>WhatsApp<br><small>+974 5078 8611</small></span>
-        </a>
-    </div>
-
-    <div class="call-float">
-        <a href="tel:+97450788611"
-           target="_blank">
-            <i class="fa fa-phone"></i><span>Call<br><small>+974 5078 8611</small></span>
-        </a>
-    </div>

@@ -5,7 +5,7 @@ from .models import Blog
 from .models import Testimonials
 from .models import Contact
 from .models import ServiceEnquiry
-from .models import ServiceFaq, Banner, Meta
+from .models import ServiceFaq, Banner, Meta, AboutUs, AboutPoint, CoreInfo, FAQ
 
 # Register your models here.
 
@@ -14,6 +14,12 @@ class ServiceFaqInline(admin.TabularInline):
     fields = ('question','answer')
     extra = 1
 
+
+class AboutPointInline(admin.TabularInline):
+    model = AboutPoint
+    extra = 1
+    
+    
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('service_name',)
@@ -51,4 +57,20 @@ class BannerAdmin(admin.ModelAdmin):
 
 @admin.register(Meta)
 class MetaAdmin(admin.ModelAdmin):
-    list_display = ("title",)
+    list_display = ("meta_title", "page")
+    
+
+@admin.register(AboutUs)
+class AboutUsAdmin(admin.ModelAdmin):
+    inlines = [AboutPointInline]
+    
+
+@admin.register(CoreInfo)
+class CoreInfoAdmin(admin.ModelAdmin):
+    list_display = ("whychoose_title",)
+    
+
+@admin.register(FAQ)
+class FAQAdmin(admin.ModelAdmin):
+    list_display = ("question",)
+    

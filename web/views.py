@@ -2,7 +2,7 @@ import urllib.parse
 from django.shortcuts import render,redirect
 from .models import Team
 from .models import Service, ServiceFaq
-from .models import Blog,Banner
+from .models import Blog,Banner, AboutUs, CoreInfo, FAQ
 from .models import Testimonials, Meta
 from .forms import ContactForm
 from .forms import ServiceEnquiryForm
@@ -10,12 +10,15 @@ from .forms import ServiceEnquiryForm
 
 def index(request):
     meta = Meta.objects.filter(page="home").first()
-    services =Service.objects.all()[:3]
+    services = Service.objects.all()
     blogs =Blog.objects.all().order_by('-date')
     testimonials =Testimonials.objects.all()
     teams = Team.objects.all()
     banners = Banner.objects.filter(is_active=True)
-    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, "meta":meta }
+    about_us = AboutUs.objects.first()
+    core_info = CoreInfo.objects.first()
+    faqs = FAQ.objects.all()
+    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, "meta":meta, "about_us":about_us, "core_info":core_info, "faqs":faqs }
     return render(request, "web/index.html", context)
 
 def about(request):

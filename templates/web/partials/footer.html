@@ -1,97 +1,77 @@
 {% load static %}
-<footer class="main-footer">
 
-    <!-- Site Branding Start -->
-    <div class="site-branding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <!-- Site Footer Logo start -->
-                    <div class="site-footer-logo">
-                        <img src="{% static 'web/images/IHPCA-LOGO-White-footer.png' %}" alt="">
-                    </div>
-                    <!-- Site Footer Logo end -->
-                </div>
-
-                <div class="col-md-6">
-                    <!-- Footer Social Link start -->
-                    <div class="footer-social-link">
-                        <ul>
-                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.linkedin.com/company/islam-hendawy-mohamed-and-partners-chartered-accountants"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        </ul>
-                    </div>  
-                    <!-- Footer Social Link end -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Site Branding End -->
-
-    <!-- Footer Menu Start -->
-    <div class="footer-menu">
+    <!-- Footer Start -->
+    <footer class="main-footer bg-section">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="{% url 'web:about' %}">About Us</a></li>
-                        <li><a href="{% url 'web:service' %}">Services</a></li>
-                        <li><a href="{% url 'web:blog' %}">Blog</a></li>
-                        <li><a href="{% url 'web:contact' %}">Conatct Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer Menu End -->
-    
-    <!-- Site Navigation Start -->
-    <div class="site-navigation">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 col-md-12">
-                    <!-- Navigation Box start -->
-                    <div class="navigation-box">
-                        <!-- Navigation Contact Box start -->
-                        <div class="navigation-contact-box">
-                            <div class="content-box-icon">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-
-                            <div class="content-box-body">
-                                <h3>Customer Support</h3>
-                                <a href="tel:+974 6642 8206">+974 6642 8206</a> <br><a href="tel:+974 5078 8611">+974 5078 8611</a>
-                            </div>
+                <div class="col-lg-7 col-md-6">
+                    <!-- About Footer Start -->
+                    <div class="about-footer">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h2>We develop & create <span>successful future</span></h2>
                         </div>
-                        <!-- Navigation Contact Box end -->
-
-                        <!-- Navigation Contact Box start -->
-                        <div class="navigation-contact-box">
-                            <div class="content-box-icon">
-                                <i class="fa-regular fa-envelope"></i>
-                            </div>
-
-                            <div class="content-box-body">
-                                <h3>Support & Email</h3>
-                                <a href="mailto:auditor@ihpca.com">auditor@ihpca.com</a>
-                            </div>
-                        </div>
-                        <!-- Navigation Contact Box end -->
+                        <!-- Section Title End -->
                     </div>
-                    <!-- Navigation Box end -->
+                    <!-- About Footer End -->
                 </div>
 
-                <div class="col-lg-5 col-md-12">
-                    <!-- Footer Copright Section Start -->
-                    <p class="footer-copyright">&copy; {% now 'Y' %} IHP - Developed by  <a href="https://momentumqfz.com/" target="__blank">Momentum Media</a></p>
-                    <!-- Footer Copright Section End -->
+                <div class="col-lg-3 col-md-3">
+                    <!-- Footer Contact Information Start -->
+                    <div class="footer-contact-info">
+                        <h3>address</h3>
+                        <p>Germany-785 15h Street, Office 478 Berlin, De 81566 </p>
+                    </div>
+                    <!-- Footer Contact Information End -->
+
+                    <!-- Footer Social Link Start -->
+                    <div class="footer-social-links">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Social Link End -->
+                </div>
+
+                <div class="col-lg-2 col-md-3">
+                    <!-- Footer Contact Information Start -->
+                    <div class="footer-contact-info">
+                        <h3>say hello</h3>
+                        <p>info@domain.com</p>
+                        <p><span>+1 840 841 256</span></p>
+                    </div>
+                    <!-- Footer Contact Information End -->
                 </div>
             </div>
+
+            <!-- Footer Copyright Section Start -->
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <!-- Footer Menu Start -->
+                        <div class="footer-menu">
+                            <ul>                            
+                                <li><a href="index-2.html">home</a></li>
+                                <li><a href="about.html">about</a></li>
+                                <li><a href="service.html">services</a></li>
+                                <li><a href="contact.html">contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Footer Menu End -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Footer Copyright Start -->
+                        <div class="footer-copyright-text">
+                            <p>Copyright © 2024 All Rights Reserved.</p>
+                        </div>
+                        <!-- Footer Copyright End -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Copyright Section End -->
         </div>
-    </div>
-    <!-- Site Navigation End -->
-</footer>
-<!-- Footer End -->
+ 

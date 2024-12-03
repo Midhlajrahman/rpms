@@ -8,6 +8,7 @@ from easy_thumbnails.fields import ThumbnailerImageField
 class Service(models.Model):
     service_name = models.CharField(max_length=120)
     service_image = models.ImageField(upload_to="service-images/", blank=True, null=True)
+    service_icon = models.FileField(upload_to="service_icons/", max_length=100)
     slug = models.SlugField(unique=True, max_length=100, blank=True)
     content = HTMLField(blank=True,null=True)
     class Meta:
@@ -117,7 +118,6 @@ class Contact(models.Model):
         return str(self.name)
     
 
-
 class Banner(models.Model):
     title = models.CharField(max_length=150)
     image = models.ImageField(upload_to="slider")
@@ -143,11 +143,11 @@ class Meta(models.Model):
         
     )
     page = models.CharField(max_length=20, choices=PAGES,)
-    title = models.CharField(max_length=60)
     meta_title = models.CharField(max_length=60)
     meta_description = models.CharField(max_length=180)
-    url = models.URLField(blank=True,null=True)
-    image = models.ImageField(upload_to="meta_image/")
+    meta_keyword = models.CharField(max_length=180)
+    canonical_url = models.URLField(blank=True,null=True)
+    image = models.ImageField(upload_to="meta_image/",blank=True,null=True)
     
     class Meta:
         ordering = ('-id',)
@@ -155,4 +155,66 @@ class Meta(models.Model):
         verbose_name_plural = "Metas"
     
     def __str__(self):
+        return self.meta_title
+    
+
+class CoreInfo(models.Model):
+    whychoose_title = models.CharField(max_length=120)
+    whychoose_us = HTMLField()
+    our_vision = HTMLField()
+    our_mission = HTMLField()
+    core_value = HTMLField()
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "Core Info" 
+        verbose_name_plural = "Core Infos"
+    
+    def __str__(self):
+        return self.whychoose_title
+
+
+class AboutUs(models.Model):
+    title = models.CharField(max_length=120)
+    description = HTMLField()
+    image = models.ImageField(upload_to="about_us/",blank=True,null=True)
+    
+    def get_points(self):
+        return AboutPoint.objects.filter(about_us=self)
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "About Us" 
+        verbose_name_plural = "About Us"
+    
+    def __str__(self):
         return self.title
+    
+
+class AboutPoint(models.Model):
+    about_us = models.ForeignKey("web.AboutUs", on_delete=models.CASCADE)
+    title = models.CharField(max_length=120)
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "About Point" 
+        verbose_name_plural = "About Points"
+    
+    def __str__(self):
+        return self.title
+    
+    
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=180)
+    answer = models.TextField()
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "FAQ" 
+        verbose_name_plural = "FAQs"
+        
+    
+    def __str__(self):
+        return self.question
+    

@@ -3,78 +3,109 @@
 	
 	var $window = $(window); 
 	var $body = $('body'); 
-	
+
 	/* Preloader Effect */
 	$window.on('load', function(){
-		setHeaderHeight();
-		$(".preloader").fadeOut(800);
+		$(".preloader").fadeOut(600);
 	});
 
-	/* Sticky Header */
-	$window.on('resize', function(){
-		setHeaderHeight();
-	});
+	/* Sticky Header */	
+	if($('.active-sticky-header').length){
+		$window.on('resize', function(){
+			setHeaderHeight();
+		});
 
-	function setHeaderHeight(){
-		$("header.main-header").css("height", $('header .header-sticky').outerHeight());
+		function setHeaderHeight(){
+	 		$("header.main-header").css("height", $('header .header-sticky').outerHeight());
+		}	
+	
+		$(window).on("scroll", function() {
+			var fromTop = $(window).scrollTop();
+			setHeaderHeight();
+			var headerHeight = $('header .header-sticky').outerHeight()
+			$("header .header-sticky").toggleClass("hide", (fromTop > headerHeight + 100));
+			$("header .header-sticky").toggleClass("active", (fromTop > 600));
+		});
 	}	
 	
-	$(window).on("scroll", function() {
-		var fromTop = $(window).scrollTop();
-		setHeaderHeight();
-		var headerHeight = $('header .header-sticky').outerHeight()
-		$("header .header-sticky").toggleClass("hide", (fromTop > headerHeight + 100));
-		$("header .header-sticky").toggleClass("active", (fromTop > 600));
-
-		$(".footer-btn").toggleClass("active", (fromTop > 600));
-	});
-
 	/* Slick Menu JS */
 	$('#menu').slicknav({
 		label : '',
 		prependTo : '.responsive-menu'
 	});
 
-	/* Testimonial Carousel JS */
-	if ($('.testimonial-slider').length) {
-		var swiper = new Swiper(".testimonial-slider", {
-			slidesPerView: 1,
-			spaceBetween: 20,
-			autoplay: true,
-			loop: true,
-			speed: 750,
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-			},
-			breakpoints: {
-				768: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				991: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
+	if($("a[href='#top']").length){
+		$("a[href='#top']").click(function() {
+			$("html, body").animate({ scrollTop: 0 }, "slow");
+			return false;
 		});
 	}
 
-	/* Popup Video */
-	if ($('.popup-video').length) {
-		$('.popup-video').magnificPopup({
-			disableOn: 700,
-			type: 'iframe',
-			mainClass: 'mfp-fade',
-			removalDelay: 160,
-			preloader: false,
-			fixedContentPos: false
+	/* Hero Slider Layout JS */
+	const hero_slider_layout = new Swiper('.hero-slider-layout .swiper', {
+		slidesPerView : 1,
+		speed: 1000,
+		spaceBetween: 0,
+		loop: true,
+		autoplay: {
+			delay: 4000,
+		},
+		pagination: {
+			el: '.hero-pagination',
+			clickable: true,
+		},
+	});
+
+	/* testimonial Slider JS */
+	if ($('.testimonial-slider').length) {
+		const testimonial_slider = new Swiper('.testimonial-slider .swiper', {
+			slidesPerView : 1,
+			speed: 1000,
+			spaceBetween: 30,
+			loop: true,
+			autoplay: {
+				delay: 5000,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.testimonial-button-next',
+				prevEl: '.testimonial-button-prev',
+			},
+			breakpoints: {
+				768:{
+				  	slidesPerView: 1,
+				},
+				991:{
+				  	slidesPerView: 1,
+				}
+			}
 		});
+	}
+
+	/* Skill Bar */
+	if ($('.skills-progress-bar').length) {
+		$('.skills-progress-bar').waypoint(function() {
+			$('.skillbar').each(function() {
+				$(this).find('.count-bar').animate({
+				width:$(this).attr('data-percent')
+				},2000);
+			});
+		},{
+			offset: '70%'
+		});
+	}
+
+	/* Youtube Background Video JS */
+	if ($('#herovideo').length) {
+		var myPlayer = $("#herovideo").YTPlayer();
 	}
 
 	/* Init Counter */
 	if ($('.counter').length) {
-		$('.counter').counterUp({ delay: 6, time: 5000 });
+		$('.counter').counterUp({ delay: 6, time: 3000 });
 	}
 
 	/* Image Reveal Animation */
@@ -105,151 +136,9 @@
         });
     }
 
-	/* Text Effect Animation */
-	if ($('.text-anime').length) {
-		const animatedElements = document.querySelectorAll(".text-anime");
-
-		animatedElements.forEach((element) => {
-		let staggerAmount = 0.05;
-		let translateXValue = 20;
-		let translateYValue = false;
-		let onScrollValue = 1;
-		let delayValue = 0.5;
-		let easeType = "power2.out";
-
-		if (element.getAttribute("data-stagger")) {
-			staggerAmount = element.getAttribute("data-stagger");
-		}
-
-		if (element.getAttribute("data-translateX")) {
-			translateXValue = element.getAttribute("data-translateX");
-		}
-
-		if (element.getAttribute("data-translateY")) {
-			translateYValue = element.getAttribute("data-translateY");
-		}
-
-		if (element.getAttribute("data-on-scroll")) {
-			onScrollValue = element.getAttribute("data-on-scroll");
-		}
-
-		if (element.getAttribute("data-delay")) {
-			delayValue = element.getAttribute("data-delay");
-		}
-
-		if (element.getAttribute("data-ease")) {
-			easeType = element.getAttribute("data-ease");
-		}
-
-		if (onScrollValue == 1) {
-			if (translateXValue > 0 && !translateYValue) {
-			let splitText = new SplitType(element, { type: "chars, words" });
-				gsap.from(splitText.chars, {
-					duration: 1,
-					delay: delayValue,
-					x: translateXValue,
-					autoAlpha: 0,
-					stagger: staggerAmount,
-					ease: easeType,
-					scrollTrigger: { trigger: element, start: "top 85%"},
-				});
-			}
-
-			if (translateYValue > 0 && !translateXValue) {
-			let splitText = new SplitType(element, { type: "chars, words" });
-			gsap.from(splitText.chars, {
-				duration: 1,
-				delay: delayValue,
-				y: translateYValue,
-				autoAlpha: 0,
-				ease: easeType,
-				stagger: staggerAmount,
-				scrollTrigger: { trigger: element, start: "top 85%" },
-			});
-			}
-
-			if (translateXValue && translateYValue) {
-			let splitText = new SplitType(element, { type: "chars, words" });
-			gsap.from(splitText.chars, {
-				duration: 3,
-				delay: delayValue,
-				y: translateYValue,
-				x: translateXValue,
-				autoAlpha: 0,
-				ease: easeType,
-				stagger: staggerAmount,
-				scrollTrigger: { trigger: element, start: "top 85%" },
-			});
-			}
-
-			if (!translateXValue && !translateYValue) {
-				let splitText = new SplitType(element, { type: "chars, words" });
-				gsap.from(splitText.chars, {
-					duration: 1,
-					delay: delayValue,
-					x: 50,
-					autoAlpha: 0,
-					stagger: staggerAmount,
-					ease: easeType,
-					scrollTrigger: { trigger: element, start: "top 85%" },
-				});
-			}
-			} else {
-				if (translateXValue > 0 && !translateYValue) {
-				let splitText = new SplitType(element, { type: "chars, words" });
-				gsap.from(splitText.chars, {
-					duration: 1,
-					delay: delayValue,
-					x: translateXValue,
-					ease: easeType,
-					autoAlpha: 0,
-					stagger: staggerAmount,
-				});
-				}
-
-				if (translateYValue > 0 && !translateXValue) {
-				let splitText = new SplitType(element, { type: "chars, words" });
-				gsap.from(splitText.chars, {
-					duration: 1,
-					delay: delayValue,
-					y: translateYValue,
-					autoAlpha: 0,
-					ease: easeType,
-					stagger: staggerAmount,
-				});
-				}
-
-				if (translateXValue && translateYValue) {
-				let splitText = new SplitType(element, { type: "chars, words" });
-				gsap.from(splitText.chars, {
-					duration: 1,
-					delay: delayValue,
-					y: translateYValue,
-					x: translateXValue,
-					ease: easeType,
-					autoAlpha: 0,
-					stagger: staggerAmount,
-				});
-				}
-
-				if (!translateXValue && !translateYValue) {
-				let splitText = new SplitType(element, { type: "chars, words" });
-				gsap.from(splitText.chars, {
-					duration: 1,
-					delay: delayValue,
-					ease: easeType,
-					x: 50,
-					autoAlpha: 0,
-					stagger: staggerAmount,
-				});
-				}
-			}
-		});
-	}
-
 	/* Parallaxie js */
 	var $parallaxie = $('.parallaxie');
-	if($parallaxie.length)
+	if($parallaxie.length && ($window.width() > 991))
 	{
 		if ($window.width() > 768) {
 			$parallaxie.parallaxie({
@@ -259,8 +148,30 @@
 		}
 	}
 
+	/* Zoom Gallery screenshot */
+	$('.gallery-items').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom',
+		image: {
+			verticalFit: true,
+		},
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			opener: function(element) {
+			  return element.find('img');
+			}
+		}
+	});
+
 	/* Contact form validation */
-	var $contactform=$("#contactForm");
+	var $contactform = $("#contactForm");
 	$contactform.validator({focus: false}).on("submit", function (event) {
 		if (!event.isDefaultPrevented()) {
 			event.preventDefault();
@@ -269,17 +180,11 @@
 	});
 
 	function submitForm(){
-		/* Initiate Variables With Form Content*/
-		var name = $("#name").val();
-		var email = $("#email").val();
-		var phone = $("#phone").val();
-		var subject = $("#subject").val();
-		var message = $("#msg").val();
-
+		/* Ajax call to submit form */
 		$.ajax({
 			type: "POST",
 			url: "form-process.php",
-			data: "name=" + name + "&email=" + email + "&phone=" + phone + "&subject=" + subject + "&message=" + message,
+			data: $contactform.serialize(),
 			success : function(text){
 				if (text == "success"){
 					formSuccess();
@@ -297,15 +202,66 @@
 
 	function submitMSG(valid, msg){
 		if(valid){
+			var msgClasses = "h4 text-success";
+		} else {
+			var msgClasses = "h4 text-danger";
+		}
+		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+	}
+	/* Contact form validation end */
+
+	/* Appointment form validation */
+	var $appointmentForm = $("#appointmentForm");
+	$appointmentForm.validator({focus: false}).on("submit", function (event) {
+		if (!event.isDefaultPrevented()) {
+			event.preventDefault();
+			submitappointmentForm();
+		}
+	});
+
+	function submitappointmentForm(){
+		/* Ajax call to submit form */
+		$.ajax({
+			type: "POST",
+			url: "form-appointment.php",
+			data: $appointmentForm.serialize(),
+			success : function(text){
+				if (text == "success"){
+					appointmentformSuccess();
+				} else {
+					appointmentsubmitMSG(false,text);
+				}
+			}
+		});
+	}
+
+	function appointmentformSuccess(){
+		$appointmentForm[0].reset();
+		appointmentsubmitMSG(true, "Message Sent Successfully!")
+	}
+
+	function appointmentsubmitMSG(valid, msg){
+		if(valid){
 			var msgClasses = "h3 text-success";
 		} else {
 			var msgClasses = "h3 text-danger";
 		}
 		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 	}
-	/* Contact form validation end */
+	/* Appointment form validation end */
 
 	/* Animated Wow Js */	
 	new WOW().init();
+
+	/* Popup Video */
+	if ($('.popup-video').length) {
+		$('.popup-video').magnificPopup({
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+			fixedContentPos: true
+		});
+	}
 	
 })(jQuery);
