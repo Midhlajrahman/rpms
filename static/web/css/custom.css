@@ -1,9 +1,3 @@
-/* ----------------------------------------------------------------------------------------
-* Author        : Awaiken
-* Template Name : Infine - Life and Business Coach HTML Template
-* File          : CSS File
-* Version       : 1.0
-* ---------------------------------------------------------------------------------------- */
 /* INDEX
 ----------------------------------------------------------------------------------------
 01. Global Variables
@@ -4600,6 +4594,7 @@ header.main-header .header-sticky.active .container-fluid::before{
 	}
 
 	.how-we-work{
+		padding-bottom: 0px !important;
 		padding: 50px 0;
 	}
 
@@ -5963,3 +5958,6 @@ header.main-header .header-sticky.active .container-fluid::before{
     }
 }
 
+.industry-section .page-services{
+	padding: 0px 0 0px !important;
+}

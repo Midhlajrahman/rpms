@@ -219,3 +219,57 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
     
+    
+class Insights(models.Model):
+    icon = models.FileField(upload_to="insights/")
+    title = models.CharField(max_length=120)
+    description = models.TextField()
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "Insight" 
+        verbose_name_plural = "Insights"
+    
+    def __str__(self):
+        return self.title
+    
+    
+class Industries(models.Model):
+    icon = models.FileField(upload_to="industries/")
+    title = models.CharField(max_length=120)
+    description = models.TextField()
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "Industry" 
+        verbose_name_plural = "Industries"
+    
+    def __str__(self):
+        return self.title
+    
+
+class MarqueeText(models.Model):
+    title = models.CharField(max_length=120)
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "Marquee Text" 
+        verbose_name_plural = "Marquee Texts"
+    
+    def __str__(self):
+        return self.title
+    
+
+class RPMSKonnect(models.Model):
+    title = models.CharField(max_length=120)
+    description = models.TextField()
+    image = models.ImageField(upload_to="rpms_konnect/",blank=True,null=True)
+    pdf = models.FileField(upload_to="rpms_konnect/",blank=True,null=True)
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "RPMS Konnect" 
+        verbose_name_plural = "RPMS Konnects"
+    
+    def __str__(self):
+        return self.title

@@ -2,7 +2,7 @@ import urllib.parse
 from django.shortcuts import render,redirect
 from .models import Team
 from .models import Service, ServiceFaq
-from .models import Blog,Banner, AboutUs, CoreInfo, FAQ
+from .models import Blog,Banner, AboutUs, CoreInfo, FAQ, Insights, Industries, MarqueeText, RPMSKonnect
 from .models import Testimonials, Meta
 from .forms import ContactForm
 from .forms import ServiceEnquiryForm
@@ -18,7 +18,11 @@ def index(request):
     about_us = AboutUs.objects.first()
     core_info = CoreInfo.objects.first()
     faqs = FAQ.objects.all()
-    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, "meta":meta, "about_us":about_us, "core_info":core_info, "faqs":faqs }
+    insights = Insights.objects.all()
+    industries = Industries.objects.all()
+    marquee_texts = MarqueeText.objects.all()
+    rpms_konnects = RPMSKonnect.objects.all()[:3]
+    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, "meta":meta, "about_us":about_us, "core_info":core_info, "faqs":faqs, "insights":insights, "industries":industries, "marquee_texts":marquee_texts, "rpms_konnects":rpms_konnects }
     return render(request, "web/index.html", context)
 
 def about(request):

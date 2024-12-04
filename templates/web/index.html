@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
     <!-- Hero Section Start -->
-    {% comment %} <div class="hero bg-section parallaxie">
+<div class="hero bg-section parallaxie">
         <div class="hero-section">
             <div class="container-fluid">
                 <div class="row">
@@ -91,9 +91,9 @@
                 </div>
             </div>
         </div>
-    </div> {% endcomment %}
+    </div> 
 
-        <!-- Hero Section Start -->
+        {% comment %} <!-- Hero Section Start -->
         <div class="hero bg-section hero-slider-layout">
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -143,9 +143,9 @@
             </div>
         </div>
         <!-- Hero Section End -->
-    <!-- Hero Section End -->
+    <!-- Hero Section End --> {% endcomment %}
 
-    <!-- About Us Section Start -->
+    {% comment %} <!-- About Us Section Start -->
     <div class="about-us">
         <div class="container">
             <div class="row align-items-center">
@@ -178,13 +178,6 @@
                                 <h3><span class="counter">30</span>+ years of experience</h3>
                             </div>
                         </div>
-                        <!-- About Experience Box End -->
-{% comment %} 
-                        <!-- Company Review Start -->
-                        <div class="company-review">
-                            <h3>5200+ five star reviews</h3>
-                        </div>
-                        <!-- Company Review End --> {% endcomment %}
                     </div>
                     <!-- About Us Image End -->
                 </div>
@@ -221,7 +214,59 @@
             </div>
         </div>
     </div>
-    <!-- About Us Section End -->
+    <!-- About Us Section End --> {% endcomment %}
+
+        <!-- Our Potential Start -->
+        <div class="our-potential">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Our Potential Content Start -->
+                        <div class="our-potential-content">
+                            <!-- Section Title Start -->
+                            <div class="section-title">
+                                <h3 class="wow fadeInUp">About US</h3>
+                                <h2 class="wow fadeInUp" data-wow-delay="0.25s">{{about_us.title}}</span></h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.5s">{{about_us.description|safe}}</p>
+                            </div>
+                            <!-- Section Title End -->
+    
+                            <!-- Our Potential Body Start -->
+                            <div class="our-potential-body">
+                                <!-- Potential Body Content Start -->
+                                <div class="potential-body-content">
+                                    <h3 class="wow fadeInUp">Strategic Insights for Sustainable Success</h3>
+                                </div>
+                                <!-- Potential Body Content End -->
+    
+                                <!-- Potential Body List Start -->
+                                <div class="potential-body-list wow fadeInUp" data-wow-delay="0.4s">
+                                    <ul>
+                                        {% for point in about_us.get_points %}
+                                        <li>{{point.title}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <!-- Potential Body List End -->
+                            </div>
+                            <!-- Our Potential Body End -->
+                        </div>
+                        <!-- Our Potential Content End -->
+                    </div>
+    
+                    <div class="col-lg-6">
+                        <!-- Our Potential Image Start -->
+                        <div class="our-potential-img">
+                            <figure class="image-anime reveal">
+                                <img src="{% static 'web/images/our-potential-img.jpg' %}" alt="">
+                            </figure>
+                        </div>
+                        <!-- Our Potential Image End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Potential End -->
     {% if services   %}
     <!-- Our Service Start -->
     <div class="our-service bg-section">
@@ -278,84 +323,6 @@
     </div>
     <!-- Our Service End -->
     {% endif %}
-    <!-- Our Potential Start -->
-    <div class="our-potential">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <!-- Our Potential Content Start -->
-                    <div class="our-potential-content">
-                        <!-- Section Title Start -->
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp">who we are</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">Unlock your potential<span> with our expertise</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.5s">Choosing us means partnering with experienced coaches who are dedicated to unlocking your potential. We offer personalized strategies, proven methods, and unwavering support to help you navigate challenges.</p>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <!-- Our Potential Counter Start -->
-                        <div class="our-potential-counter">
-                            <!-- Potential Counter Item Start -->
-                            <div class="potential-counter-item">
-                                <div class="counter-circle">
-                                    <h2><span class="counter">98</span>%</h2>
-                                </div>
-                                <div class="potential-counter-content">
-                                    <h3>satisfied customers</h3>
-                                </div>
-                            </div>
-                            <!-- Potential Counter Item End -->
-
-                            <!-- Potential Counter Item Start -->
-                            <div class="potential-counter-item">
-                                <div class="counter-circle">
-                                    <h2><span class="counter">20</span>K</h2>
-                                </div>
-                                <div class="potential-counter-content">
-                                    <h3>projects completed</h3>
-                                </div>
-                            </div>
-                            <!-- Potential Counter Item End -->
-                        </div>
-                        <!-- Our Potential Counter End -->
-
-                        <!-- Our Potential Body Start -->
-                        <div class="our-potential-body">
-                            <!-- Potential Body Content Start -->
-                            <div class="potential-body-content">
-                                <h3 class="wow fadeInUp">certified and experienced coaching professionals</h3>
-                                <p class="wow fadeInUp" data-wow-delay="0.2s">Our team consists of highly trained and certified coaches who stay up-to-date with the latest coaching practices.</p>
-                            </div>
-                            <!-- Potential Body Content End -->
-
-                            <!-- Potential Body List Start -->
-                            <div class="potential-body-list wow fadeInUp" data-wow-delay="0.4s">
-                                <ul>
-                                    <li>continuous support and accountability</li>
-                                    <li>results-driven methods that deliver lasting change</li>
-                                </ul>
-                            </div>
-                            <!-- Potential Body List End -->
-                        </div>
-                        <!-- Our Potential Body End -->
-                    </div>
-                    <!-- Our Potential Content End -->
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Our Potential Image Start -->
-                    <div class="our-potential-img">
-                        <figure class="image-anime reveal">
-                            <img src="{% static 'web/images/our-potential-img.jpg' %}" alt="">
-                        </figure>
-                    </div>
-                    <!-- Our Potential Image End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Our Potential End -->
-
   
     <!-- Our Approach Start -->
     <div class="our-approach bg-section">
@@ -460,95 +427,45 @@
     <!-- Our Approach End -->
 
     <!-- Our Partners Start -->
-    <div class="our-partners">
+    <div class="our-partners industry-section">
         <div class="container">
             <div class="row section-row align-items-center">
                 <div class="col-lg-6">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">Industries we serve</h3>
-                        <p class="wow fadeInUp" data-wow-delay="0.25s">PAH delegates integrated advisory outsourcing, credit, tax & counselling services to help clients succeed professionally and personally grounded in public accounting. Our professional services allow us to serve clients more competitively & offer our people diverse career opportunities.</p>
+                        <h3 class="wow fadeInUp">Industries</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.25s">Industries We <span>Serve</span></h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.25s">RPMS delegates integrated advisory outsourcing, credit, tax & counselling services to help clients succeed professionally and personally grounded in public accounting. Our professional services allow us to serve clients more competitively & offer our people diverse career opportunities.</p>
                     </div>
                     <!-- Section Title End -->
                 </div>
-
-                <div class="col-lg-6">
-                    <!-- Contact Circle Start -->
-                    <div class="contact-circle">
-                        <img src="{% static 'web/images/contact-now-circle.svg' %}" alt="">
-                    </div>
-                    <!-- Contact Circle End -->
-                </div>
             </div>
 
+            <div class="page-services">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-6">
-                    <!-- Company Logo Start -->
-                    <div class="company-logo wow fadeInUp">
-                        Manufacturing & Distribution                    </div>
-                    <!-- Company Logo End -->
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <!-- Company Logo Start -->
-                    <div class="company-logo wow fadeInUp" data-wow-delay="0.2s">
-                        Real Estate & Construction                    </div>
-                    <!-- Company Logo End -->
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="company-section wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="company-logo">
-                            <img src="{% static 'web/images/industry.png' %}" alt="Industry Logo">
+
+                {% for industry in industries %}
+                <div class="col-lg-4 col-md-6">
+                    <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.8s">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="{{industry.icon.url}}" alt="">
                         </div>
-                        <div class="company-details">
-                            <i class="fas fa-industry"></i>
-                            <h3>Leading in the Industry</h3>
+                        <!-- Icon Box End -->
+
+                        <!-- Service Item Content Start -->
+                        <div class="service-item-content">
+                            <h3>{{industry.title}}</h3>
+                            <p>{{industry.description}}</p>
                         </div>
+                        <!-- Service Item Content End -->
                     </div>
-                    
+                    <!-- Service Item End -->
                 </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <!-- Company Logo Start -->
-                    <div class="company-logo wow fadeInUp" data-wow-delay="0.6s">
-                        <img src="{% static 'web/images/company-logo-4.svg' %}" alt="">
-                    </div>
-                    <!-- Company Logo End -->
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <!-- Company Logo Start -->
-                    <div class="company-logo wow fadeInUp" data-wow-delay="0.8s">
-                        <img src="{% static 'web/images/company-logo-5.svg' %}" alt="">
-                    </div>
-                    <!-- Company Logo End -->
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <!-- Company Logo Start -->
-                    <div class="company-logo wow fadeInUp" data-wow-delay="1s">
-                        <img src="{% static 'web/images/company-logo-6.svg' %}" alt="">
-                    </div>
-                    <!-- Company Logo End -->
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <!-- Company Logo Start -->
-                    <div class="company-logo wow fadeInUp" data-wow-delay="1.2s">
-                        <img src="{% static 'web/images/company-logo-7.svg' %}" alt="">
-                    </div>
-                    <!-- Company Logo End -->
-                </div>
-                
-                <div class="col-lg-3 col-md-4 col-6">
-                    <!-- Company Logo Start -->
-                    <div class="company-logo wow fadeInUp" data-wow-delay="1.4s">
-                        <img src="{% static 'web/images/company-logo-8.svg' %}" alt="">
-                    </div>
-                    <!-- Company Logo End -->
-                </div>
+                {% endfor %}
             </div>
+        </div>
         </div>
     </div>
     <!-- Our Partners End -->
@@ -619,126 +536,6 @@
     </div>
     <!-- Company Experience Section End -->
 
-    <!-- Why Choose Us Start -->
-     <div class="why-choose-us">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="why-choose-us-content">
-                        <!-- Section Title Start -->
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp">why choose us ?</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">Personalized coaching tailored to <span>your needs</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.5s">We understand that no two clients are the same. That's why we create personalized coaching plans designed to address your specific challenges and goals. Whether you're focusing on personal growth or business development, our tailored approach ensures you get the exact guidance you need to succeed.</p>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <div class="why-choose-skillbar">
-                            <!-- Skills Progress Bar Start -->
-                            <div class="skills-progress-bar">
-                                <!-- Skill Item Start -->
-                                <div class="skillbar" data-percent="90%">
-                                    <div class="skill-data">
-                                        <div class="skill-title">client success rattings</div>
-                                        <div class="skill-no">90%</div>
-                                    </div>
-                                    <div class="skill-progress">
-                                        <div class="count-bar"></div>
-                                    </div>
-                                </div>
-                                <!-- Skill Item End -->
-                            </div>
-                            <!-- Skills Progress Bar End -->
-
-                            <!-- Skills Progress Bar Start -->
-                            <div class="skills-progress-bar">
-                                <!-- Skill Item Start -->
-                                <div class="skillbar" data-percent="65%">
-                                    <div class="skill-data">
-                                        <div class="skill-title">projects completed ratio</div>
-                                        <div class="skill-no">65%</div>
-                                    </div>
-                                    <div class="skill-progress">
-                                        <div class="count-bar"></div>
-                                    </div>
-                                </div>
-                                <!-- Skill Item End -->
-                            </div>
-                            <!-- Skills Progress Bar End -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <!-- Why Choose Us Image Start -->
-                    <div class="why-choose-us-image">
-                        <div class="why-choose-us-img-1">
-                            <figure class="image-anime reveal">
-                                <img src="{% static 'web/images/why-choose-us-img-1.jpg' %}" alt="">
-                            </figure>
-                        </div>
-                        <div class="why-choose-us-img-2">
-                            <figure class="image-anime reveal">
-                                <img src="{% static 'web/images/why-choose-us-img-2.jpg' %}" alt="">
-                            </figure>
-                        </div>
-
-                        <!-- Why Choose Contact Circle Start -->
-                        <div class="why-choose-contact-circle">
-                            <img src="{% static 'web/images/why-choose-contact-circle.svg' %}" alt="">
-                        </div>
-                        <!-- Why Choose Contact Circle End -->
-                    </div>
-                    <!-- Why Choose Us Image End -->
-                </div>
-            </div>
-        </div>
-     </div>
-    <!-- Why Choose Us End -->
-
-    <!-- Intro Video Section Start -->
-    <div class="intro-video bg-section parallaxie">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-8">
-                    <!-- Section Title Start -->
-                    <div class="section-title wow fadeInUp">
-                        <h2>Watch our coaching  videos for <span>practical tools</span></h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-
-                <div class="col-lg-6 col-md-4">
-                    <!-- Intro Video Box Start -->
-					<div class="intro-video-box">
-                        <!-- Video Play Button Start -->
-                        <div class="video-play-button">
-                            <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video" data-cursor-text="Play">
-                                <i class="fa-solid fa-play"></i>
-                            </a>
-                            <p>watch video</p>
-                        </div>
-                        <!-- Video Play Button End -->
-                    </div>
-					<!-- Intro Video Box End -->
-                </div>
-
-                <div class="col-lg-12">
-                    <!-- Intro Video List Start -->
-                    <div class="intro-video-list wow fadeInUp" data-wow-delay="0.25s">
-                        <ul>
-                            <li>Personal and Professional Success</li>
-                            <li>Your Potential with Expert Coaching</li>
-                            <li>Tailored Strategies for Growth</li>
-                            <li>Empowering Your Journey Success</li>
-                        </ul>
-                    </div>
-                    <!-- Intro Video List End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Intro Video Section End -->
 
     {% if teams %}
     <!-- Our Team Start -->
@@ -801,7 +598,7 @@
                 <div class="col-lg-6">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">how we work</h3>
+                        <h3 class="wow fadeInUp">Our Insights</h3>
                         <h2 class="wow fadeInUp" data-wow-delay="0.25s">Delivering  <span>on the Promise</span></h2>
                     </div>
                     <!-- Section Title End -->
@@ -810,72 +607,29 @@
                 <div class="col-lg-6">
                     <!-- Section Button Start -->
                     <div class="section-btn wow fadeInUp" data-wow-delay="0.5s">
-                        <a href="contact.html" class="btn-default">contact us</a>
+                        <a href="#" class="btn-default">contact us</a>
                     </div>
                     <!-- Section Button End -->
                 </div>
             </div>
 
             <div class="row">
+                {% for insight in insights %}
                 <div class="col-lg-3 col-md-6">
                     <!-- How Work Item Start -->
                     <div class="how-work-item wow fadeInUp">
                         <div class="icon-box">
-                            <img src="{% static 'web/images/icon-how-work-1.svg' %}" alt="">
+                            <img src="{{insight.icon.url}}" alt="">
                         </div>
 
                         <div class="how-work-content">
-                            <h3><span>01.</span> Integrity</h3>
-                            <p>One on one sessions to achieve personal goals and enhance self awareness.</p>
+                            <h3><span>{{ forloop.counter }}.</span> {{insight.title}}</h3>
+                            <p>{{insight.description}}</p>
                         </div>
                     </div>
                     <!-- How Work Item End -->
                 </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- How Work Item Start -->
-                    <div class="how-work-item wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="icon-box">
-                            <img src="{% static 'web/images/icon-how-work-2.svg' %}" alt="">
-                        </div>
-
-                        <div class="how-work-content">
-                            <h3><span>02.</span> Partnership</h3>
-                            <p>One on one sessions to achieve personal goals and enhance self awareness.</p>
-                        </div>
-                    </div>
-                    <!-- How Work Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- How Work Item Start -->
-                    <div class="how-work-item wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="icon-box">
-                            <img src="{% static 'web/images/icon-how-work-3.svg' %}" alt="">
-                        </div>
-
-                        <div class="how-work-content">
-                            <h3><span>03.</span> Passion</h3>
-                            <p>One on one sessions to achieve personal goals and enhance self awareness.</p>
-                        </div>
-                    </div>
-                    <!-- How Work Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- How Work Item Start -->
-                    <div class="how-work-item wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="icon-box">
-                            <img src="{% static 'web/images/icon-how-work-4.svg' %}" alt="">
-                        </div>
-
-                        <div class="how-work-content">
-                            <h3><span>04.</span> Excellence</h3>
-                            <p>One on one sessions to achieve personal goals and enhance self awareness.</p>
-                        </div>
-                    </div>
-                    <!-- How Work Item End -->
-                </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -888,19 +642,12 @@
                         <div class="scrolling-ticker-box">
                             <!-- Scrolling Ticker Content Start -->
                             <div class="scrolling-content">
-                                <span><img src="{% static 'web/images/asterisk-icon.svg' %}" alt="">Stress Management</span>
-                                <span><img src="{% static 'web/images/asterisk-icon.svg' %}" alt="">Business Coaching</span>
-                                <span><img src="{% static 'web/images/asterisk-icon.svg' %}" alt="">Career Support</span>
+                                {% for marquee_text in marquee_texts %}
+                                <span><img src="{% static 'web/images/asterisk-icon.svg' %}" alt="">{{marquee_text.title}}</span>
+                                {% endfor %}
                             </div>
                             <!-- Scrolling Ticker Content End -->
 
-                            <!-- Scrolling Ticker Content Start -->
-                            <div class="scrolling-content">
-                                <span><img src="{% static 'web/images/asterisk-icon.svg' %}" alt="">Stress Management</span>
-                                <span><img src="{% static 'web/images/asterisk-icon.svg' %}" alt="">Business Coaching</span>
-                                <span><img src="{% static 'web/images/asterisk-icon.svg' %}" alt="">Career Support</span>
-                            </div>
-                            <!-- Scrolling Ticker Content End -->
                         </div>
                         <!-- Scrolling Ticker Box End -->
                     </div>
@@ -911,81 +658,65 @@
     </div>
     <!-- How We Work Section End -->
 
-    <!-- Company Growth Section Start -->
-    <div class="company-growth bg-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <!-- Company Growth Image Start -->
-                    <div class="company-growth-image">
-                        <figure class="image-anime reveal">
-                            <img src="{% static 'web/images/company-growth-img.jpg' %}" alt="">
-                        </figure>
-                    </div>
-                    <!-- Company Growth Image End -->
-                </div>
-
-                <div class="col-lg-7">
-                    <!-- Company Growth Content Start -->
-                    <div class="company-growth-content">
+    <!-- Page Blog Start -->
+        <div class="page-blog">
+            <div class="container">
+                <div class="row section-row align-items-center">
+                    <div class="col-lg-6">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">wo we are</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">Unlock your potential <span>with our expertise</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.5s">Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                            <h3 class="wow fadeInUp">RPMS Konnect</h3>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">RPMS <span>Konnect</span></h2>
                         </div>
                         <!-- Section Title End -->
-
-                        <!-- Company Growth Button Start -->
-                        <div class="company-growth-btn wow fadeInUp" data-wow-delay="0.75s">
-                            <a href="contact.html" class="btn-default">get started</a>
-                        </div>
-                        <!-- Company Growth Button End -->
                     </div>
-                    <!-- Company Growth Content End -->
+    
+                    <div class="col-lg-6">
+                        <!-- Section Button Start -->
+                        <div class="section-btn wow fadeInUp" data-wow-delay="0.5s">
+                            <a href="#" class="btn-default">View More</a>
+                        </div>
+                        <!-- Section Button End -->
+                    </div>
                 </div>
-
-                <div class="col-lg-12">
-                    <!-- Company Growth Box Start -->
-                    <div class="company-growth-box">
-                        <!-- Company Growth Item Start -->
-                        <div class="company-growth-item">
-                            <h2><span class="counter">9,857</span></h2>
-                            <h3>business success</h3>
-                            <p>We believe in measurable success. At the end of the coaching program.</p>
+                <div class="row">
+                    {% for rpms_konnect in rpms_konnects %}
+    
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Post Item Start -->
+                        <div class="post-item wow fadeInUp">
+                            <!-- Post Featured Image Start -->
+                            <div class="post-featured-image">
+                                <figure>
+                                    <a href="{{rpms_konnect.pdf.url}}" class="image-anime" data-cursor-text="View" target="_blank">
+                                        <img src="{{rpms_konnect.image.url}}" alt="">
+                                    </a>
+                                </figure>
+    
+                                <div class="post-btn">
+                                    <a href="{{rpms_konnect.pdf.url}}"><img src="{% static 'web/images/arrow-white.svg' %}" alt=""></a>
+                                </div>
+                            </div>
+                            <!-- Post Featured Image End -->
+    
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2><a href="blog-single.html">{{rpms_konnect.title}}</a></h2>
+                                <p>{{rpms_konnect.description}}</p>~
+                            </div>
+                            <!-- Post Item Content End -->
                         </div>
-                        <!-- Company Growth Item End -->
-
-                        <!-- Company Growth Item Start -->
-                        <div class="company-growth-item">
-                            <h2><span class="counter">90</span>%</h2>
-                            <h3>business strategy</h3>
-                            <p>We believe in measurable success. At the end of the coaching program.</p>
-                        </div>
-                        <!-- Company Growth Item End -->
-
-                        <!-- Company Growth Item Start -->
-                        <div class="company-growth-item">
-                            <h2><span class="counter">60</span>%</h2>
-                            <h3>profit upscale</h3>
-                            <p>We believe in measurable success. At the end of the coaching program.</p>
-                        </div>
-                        <!-- Company Growth Item End -->
-
-                        <!-- Company Growth Item Start -->
-                        <div class="company-growth-item">
-                            <h2><span class="counter">30</span>+</h2>
-                            <h3>years experience</h3>
-                            <p>We believe in measurable success. At the end of the coaching program.</p>
-                        </div>
-                        <!-- Company Growth Item End -->
+                        <!-- Post Item End -->
                     </div>
-                    <!-- Company Growth Box End -->
+                    {% endfor %}
+                    </div>
+    
+    
+                   
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Company Growth Section End -->
+        <!-- Page Blog End -->
 
     <!-- Our FAQs Section Start -->
     <div class="our-faqs">
@@ -1141,56 +872,6 @@
                     </div>
                     <!-- Testimonial Slider End -->
                 </div>
-
-                <div class="col-lg-12">
-                    <!-- Testimonial Rating Box Start -->
-                    <div class="testimonial-rating-box">
-                        <!-- Testimonial Rating Item Start -->
-                        <div class="testimonial-rating-item">
-                            <div class="icon-box">
-                                <img src="{% static 'web/images/icon-testimonial-rating-1.svg' %}" alt="">
-                            </div>
-                            <div class="testimonial-rating-content">
-                                <p><span class="counter">982</span>+ Trustpilot 4.8 start reviews</p>
-                            </div>
-                        </div>
-                        <!-- Testimonial Rating Item End -->
-
-                        <!-- Testimonial Rating Item Start -->
-                        <div class="testimonial-rating-item">
-                            <div class="icon-box">
-                                <img src="{% static 'web/images/icon-testimonial-rating-2.svg' %}" alt="">
-                            </div>
-                            <div class="testimonial-rating-content">
-                                <p><span class="counter">487</span>+ Airbng 5 start reviews</p>
-                            </div>
-                        </div>
-                        <!-- Testimonial Rating Item End -->
-
-                        <!-- Testimonial Rating Item Start -->
-                        <div class="testimonial-rating-item">
-                            <div class="icon-box">
-                                <img src="{% static 'web/images/icon-testimonial-rating-3.svg' %}" alt="">
-                            </div>
-                            <div class="testimonial-rating-content">
-                                <p><span class="counter">182</span>+ Yelp 5 start reviews</p>
-                            </div>
-                        </div>
-                        <!-- Testimonial Rating Item End -->
-
-                        <!-- Testimonial Rating Item Start -->
-                        <div class="testimonial-rating-item">
-                            <div class="icon-box">
-                                <img src="{% static 'web/images/icon-testimonial-rating-4.svg' %}" alt="">
-                            </div>
-                            <div class="testimonial-rating-content">
-                                <p><span class="counter">897</span>+ Google 5 start reviews</p>
-                            </div>
-                        </div>
-                        <!-- Testimonial Rating Item End -->
-                    </div>
-                    <!-- Testimonial Rating Box End -->
-                </div>
             </div>
         </div>
     </div>
@@ -1205,7 +886,7 @@
                     <div class="our-blog-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">news/post</h3>
+                            <h3 class="wow fadeInUp">Blogs/updates</h3>
                             <h2 class="wow fadeInUp" data-wow-delay="0.25s">Latest Blogs and Updates</h2>
                         </div>
                         <!-- Section Title End -->

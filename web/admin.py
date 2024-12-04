@@ -5,7 +5,7 @@ from .models import Blog
 from .models import Testimonials
 from .models import Contact
 from .models import ServiceEnquiry
-from .models import ServiceFaq, Banner, Meta, AboutUs, AboutPoint, CoreInfo, FAQ
+from .models import ServiceFaq, Banner, Meta, AboutUs, AboutPoint, CoreInfo, FAQ, Insights, Industries, MarqueeText, RPMSKonnect
 
 # Register your models here.
 
@@ -74,3 +74,22 @@ class CoreInfoAdmin(admin.ModelAdmin):
 class FAQAdmin(admin.ModelAdmin):
     list_display = ("question",)
     
+
+@admin.register(Insights)
+class InsightsAdmin(admin.ModelAdmin):
+    list_display = ("title",)
+    
+
+@admin.register(Industries)
+class IndustriesAdmin(admin.ModelAdmin):
+    list_display = ("title",)
+    
+
+@admin.register(MarqueeText)
+class MarqueeTextAdmin(admin.ModelAdmin):
+    list_display = ("title",)
+    
+
+@admin.register(RPMSKonnect)
+class RPMSKonnectAdmin(admin.ModelAdmin):
+    list_display = ("title",)
