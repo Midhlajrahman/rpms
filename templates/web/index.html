@@ -1083,7 +1083,7 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">testimonial</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">Real success stories from our <span>coaching clients</span></h2>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">Hear from Our <span>Satisfied Clients</span></h2>
                         </div>
                         <!-- Section Title End -->
                     </div>                    
@@ -1094,12 +1094,13 @@
                     <div class="testimonial-slider">
                         <div class="swiper">
                             <div class="swiper-wrapper" data-cursor-text="Drag">
+                                {% for testimonial in testimonials %}
                                 <!-- Testimonial Slide Start -->
                                 <div class="swiper-slide">
                                     <div class="testimonial-item">
                                         <div class="testimonial-slider-image">
                                             <figure class="image-anime">
-                                                <img src="{% static 'web/images/testimonial-img-1.jpg' %}" alt="">
+                                                <img src="{{testimonial.image.url}}" alt="">
                                             </figure>
                                         </div>
 
@@ -1120,90 +1121,17 @@
                                                 <i class="fa-solid fa-star"></i>
                                             </div>                                        
                                             <div class="testimonial-content">
-                                                <p>Our backyard has been completely transformed! The team was professional, attentive, and delivered beyond our expectations. the quality of work is outstanding.</p>								
+                                                <p>{{testimonial.description}}</p>								
                                             </div>
                                             <div class="author-content">
-                                                <h3>annette black</h3>
-                                                <p>Sr. Gardener</p>
+                                                <h3>{{testimonial.name}}</h3>
+                                                <p>{{testimonial.position}}</p>
                                             </div>
                                         </div>                                        
                                     </div>
                                 </div>
                                 <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-slider-image">
-                                            <figure class="image-anime">
-                                                <img src="{% static 'web/images/testimonial-img-2.jpg' %}" alt="">
-                                            </figure>
-                                        </div>
-
-                                        <div class="testimonial-slider-content">
-                                            <div class="testimonial-header">            
-                                                <div class="testimonial-rating-company">
-                                                    <img src="{% static 'web/images/icon-testimonial-rating-4.svg' %}" alt="">
-                                                </div>
-                                                <div class="testimonial-quote">
-                                                    <img src="{% static 'web/images/testimonial-quote.svg' %}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>                                        
-                                            <div class="testimonial-content">
-                                                <p>Our backyard has been completely transformed! The team was professional, attentive, and delivered beyond our expectations. the quality of work is outstanding.</p>								
-                                            </div>
-                                            <div class="author-content">
-                                                <h3>claire peterson</h3>
-                                                <p>content writer</p>
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-slider-image">
-                                            <figure class="image-anime">
-                                                <img src="{% static 'web/images/testimonial-img-3.jpg' %}" alt="">
-                                            </figure>
-                                        </div>
-
-                                        <div class="testimonial-slider-content">
-                                            <div class="testimonial-header">            
-                                                <div class="testimonial-rating-company">
-                                                    <img src="{% static 'web/images/icon-testimonial-rating-4.svg' %}" alt="">
-                                                </div>
-                                                <div class="testimonial-quote">
-                                                    <img src="{% static 'web/images/testimonial-quote.svg' %}" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>                                        
-                                            <div class="testimonial-content">
-                                                <p>Our backyard has been completely transformed! The team was professional, attentive, and delivered beyond our expectations. the quality of work is outstanding.</p>								
-                                            </div>
-                                            <div class="author-content">
-                                                <h3>natalie brooks</h3>
-                                                <p>graphic designer</p>
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
+                                {% endfor %}
                             </div>
                             <div class="testimonial-btn">
                                 <div class="testimonial-button-prev"></div>
@@ -1278,7 +1206,7 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">news/post</h3>
-                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">Latest updates and coaching <span>industry insights</span></h2>
+                            <h2 class="wow fadeInUp" data-wow-delay="0.25s">Latest Blogs and Updates</h2>
                         </div>
                         <!-- Section Title End -->
 
@@ -1294,13 +1222,15 @@
                 <div class="col-lg-8">
                     <!-- Blog Box Start -->
                     <div class="blog-box">
+
+                        {% for blog in blogs %}
                         <!-- Blog Item Start -->
                         <div class="blog-item wow fadeInUp">
                             <!-- Blog Featured Image Start -->
                             <div class="blog-featured-image">
-                                <a href="blog-single.html" class="image-anime" data-cursor-text="View">
+                                <a href="#" class="image-anime" data-cursor-text="View">
                                     <figure>
-                                        <img src="{% static 'web/images/post-1.jpg' %}" alt="">
+                                        <img src="{{blog.image.url}}" alt="">
                                     </figure>
                                 </a>
                             </div>
@@ -1310,82 +1240,21 @@
                             <div class="blog-item-body">
                                 <!-- Blog Item Content Start -->
                                 <div class="blog-item-content">
-                                    <h2><a href="blog-single.html">Mental Wellness and Resilience The Power of Coaching</a></h2>
-                                    <p>Mental wellness and resilience are crucial for navigating life's challenges.</p>
+                                    <h2><a href="#">{{blog.title}}</a></h2>
+                                    <p>{{blog.description}}</p>
                                 </div>
                                 <!-- Blog Item Content End -->
 
                                 <!-- Blog Item Button Start -->
                                 <div class="blog-item-btn">
-                                    <a href="blog-single.html" class="btn-default">read more</a>
+                                    <a href="#" class="btn-default">read more</a>
                                 </div>
                                 <!-- Blog Item Button End -->
                             </div>
                             <!-- Blog Item Body End -->                        
                         </div>
                         <!-- Blog Item End -->
-
-                        <!-- Blog Item Start -->
-                        <div class="blog-item wow fadeInUp" data-wow-delay="0.25s">
-                            <!-- Blog Featured Image Start -->
-                            <div class="blog-featured-image">
-                                <a href="blog-single.html" class="image-anime" data-cursor-text="View">
-                                    <figure>
-                                        <img src="{% static 'web/images/post-2.jpg' %}" alt="">
-                                    </figure>
-                                </a>
-                            </div>
-                            <!-- Blog Featured Image End -->
-
-                            <!-- Blog Item Body Start -->
-                            <div class="blog-item-body">
-                                <!-- Blog Item Content Start -->
-                                <div class="blog-item-content">
-                                    <h2><a href="blog-single.html">How to Maintain Work-Life Balance in a Busy World</a></h2>
-                                    <p>Maintaining work-life balance in today's fast-paced world can be challenging.</p>
-                                </div>
-                                <!-- Blog Item Content End -->
-
-                                <!-- Blog Item Button Start -->
-                                <div class="blog-item-btn">
-                                    <a href="blog-single.html" class="btn-default">read more</a>
-                                </div>
-                                <!-- Blog Item Button End -->
-                            </div>
-                            <!-- Blog Item Body End -->                        
-                        </div>
-                        <!-- Blog Item End -->
-
-                        <!-- Blog Item Start -->
-                        <div class="blog-item wow fadeInUp" data-wow-delay="0.5s">
-                            <!-- Blog Featured Image Start -->
-                            <div class="blog-featured-image">
-                                <a href="blog-single.html" class="image-anime" data-cursor-text="View">
-                                    <figure>
-                                        <img src="{% static 'web/images/post-3.jpg' %}" alt="">
-                                    </figure>
-                                </a>
-                            </div>
-                            <!-- Blog Featured Image End -->
-
-                            <!-- Blog Item Body Start -->
-                            <div class="blog-item-body">
-                                <!-- Blog Item Content Start -->
-                                <div class="blog-item-content">
-                                    <h2><a href="blog-single.html">The Power of Mindset Transforming Your Life & Business</a></h2>
-                                    <p>A positive mindset fuels growth, success, and resilience in life and business.</p>
-                                </div>
-                                <!-- Blog Item Content End -->
-
-                                <!-- Blog Item Button Start -->
-                                <div class="blog-item-btn">
-                                    <a href="blog-single.html" class="btn-default">read more</a>
-                                </div>
-                                <!-- Blog Item Button End -->
-                            </div>
-                            <!-- Blog Item Body End -->                        
-                        </div>
-                        <!-- Blog Item End -->
+                        {% endfor %}
                     </div>
                     <!-- Blog Box End -->
                 </div>

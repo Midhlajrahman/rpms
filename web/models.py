@@ -91,6 +91,7 @@ class Team(models.Model):
 
 class Testimonials(models.Model):
     name = models.CharField(max_length=150)
+    position = models.CharField(max_length=150)
     image = models.ImageField(blank=True,null=True, upload_to="testimonial-images",)
     description = models.TextField(blank=True,null=True)
 
