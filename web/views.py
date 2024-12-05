@@ -22,7 +22,8 @@ def index(request):
     industries = Industries.objects.all()
     marquee_texts = MarqueeText.objects.all()
     rpms_konnects = RPMSKonnect.objects.all()[:3]
-    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, "meta":meta, "about_us":about_us, "core_info":core_info, "faqs":faqs, "insights":insights, "industries":industries, "marquee_texts":marquee_texts, "rpms_konnects":rpms_konnects }
+    our_journies = RPMSKonnect.objects.all()
+    context = {"is_index": True,"services": services,"blogs": blogs,"testimonials": testimonials,"teams": teams, "banners": banners, "meta":meta, "about_us":about_us, "core_info":core_info, "faqs":faqs, "insights":insights, "industries":industries, "marquee_texts":marquee_texts, "rpms_konnects":rpms_konnects, "our_journies":our_journies }
     return render(request, "web/index.html", context)
 
 def about(request):

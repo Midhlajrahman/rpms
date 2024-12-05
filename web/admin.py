@@ -93,3 +93,8 @@ class MarqueeTextAdmin(admin.ModelAdmin):
 @admin.register(RPMSKonnect)
 class RPMSKonnectAdmin(admin.ModelAdmin):
     list_display = ("title",)
+    
+
+@admin.register(OurJourney)
+class OurJourneyAdmin(admin.ModelAdmin):
+    list_display = ("year",)

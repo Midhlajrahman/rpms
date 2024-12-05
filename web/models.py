@@ -273,3 +273,19 @@ class RPMSKonnect(models.Model):
     
     def __str__(self):
         return self.title
+    
+
+class OurJourney(models.Model):
+    year = models.CharField(max_length=120)
+    description = HTMLField()
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = "Our Journey" 
+        verbose_name_plural = "Our Journies"
+    
+    def __str__(self):
+        return self.year
+    
+    
+    
