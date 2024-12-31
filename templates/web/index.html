@@ -299,7 +299,9 @@
                         <!-- Service Item Start -->
                         <div class="service-item wow fadeInUp">
                             <div class="icon-box">
+                                {% if service.service_icon %}
                                 <img src="{{service.service_icon.url}}" alt="">
+                                {% endif %}
                             </div>
 
                             <div class="service-item-content">

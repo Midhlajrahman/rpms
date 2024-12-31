@@ -1,21 +1,14 @@
-# Define config vars and Register app in INSTALLED APPS
 from pathlib import Path
 from decouple import config
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=True, cast=bool)
 
 ALLOWED_HOSTS = ["*"]
 
-
-
-# Application definition
 
 INSTALLED_APPS = [
     "admin_interface",
@@ -103,14 +96,36 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+LANGUAGE_CODE = "en-us"
+TIME_ZONE = "Asia/Kolkata"
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
+
+USE_L10N = False
+DATE_INPUT_FORMATS = (
+    "%d/%m/%Y",
+    "%d-%m-%Y",
+    "%d/%m/%y",
+    "%d %b %Y",
+    "%d %b, %Y",
+    "%d %b %Y",
+    "%d %b, %Y",
+    "%d %B, %Y",
+    "%d %B %Y",
+)
+DATETIME_INPUT_FORMATS = (
+    "%d/%m/%Y %H:%M:%S",
+    "%d/%m/%Y %H:%M",
+    "%d/%m/%Y",
+    "%d/%m/%y %H:%M:%S",
+    "%d/%m/%y %H:%M",
+    "%d/%m/%y",
+    "%Y-%m-%d %H:%M:%S",
+    "%Y-%m-%d %H:%M",
+    "%Y-%m-%d",
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

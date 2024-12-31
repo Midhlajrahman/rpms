@@ -5,7 +5,7 @@ from .models import Blog
 from .models import Testimonials
 from .models import Contact
 from .models import ServiceEnquiry
-from .models import ServiceFaq, Banner, Meta, AboutUs, AboutPoint, CoreInfo, FAQ, Insights, Industries, MarqueeText, RPMSKonnect
+from .models import ServiceFaq, Banner, Meta, AboutUs, AboutPoint, CoreInfo, FAQ, Insights, Industries, MarqueeText, RPMSKonnect, OurJourney
 
 # Register your models here.
 
